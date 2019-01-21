@@ -8,8 +8,8 @@
 
 require_once './core/Config/main.php';
 
-$app_id = '16201814332283XXX';
-$secret = '3f9cce9365cc8825554a43a33f7ecb5181969XXX';
+$app_id = '';
+$secret = '';
 
 
 //1、获得auth_code的url地址
