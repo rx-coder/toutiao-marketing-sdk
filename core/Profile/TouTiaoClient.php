@@ -9,9 +9,9 @@
 namespace core\Profile;
 
 use AdvertisingDelivery\V20190118\GetCampaign;
-use AuthenticationOauth\V20190121\GetAccessToken;
-use AuthenticationOauth\V20190121\GetAuthCodeUrl;
-use AuthenticationOauth\V20190121\RefreshToken;
+use AuthenticationOauth\V1\GetAccessToken;
+use AuthenticationOauth\V1\GetAuthCodeUrl;
+use AuthenticationOauth\V1\RefreshToken;
 use core\Exception\TouTiaoException;
 use core\Http\HttpRequest;
 
