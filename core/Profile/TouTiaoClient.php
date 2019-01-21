@@ -8,7 +8,7 @@
 
 namespace core\Profile;
 
-use AdvertisingDelivery\V20190118\GetCampaign;
+use AdvertisingDelivery\V1\GetCampaign;
 use AuthenticationOauth\V1\GetAccessToken;
 use AuthenticationOauth\V1\GetAuthCodeUrl;
 use AuthenticationOauth\V1\RefreshToken;
