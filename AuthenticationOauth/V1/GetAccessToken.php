@@ -13,6 +13,6 @@ class GetAccessToken extends RpcRequest
     /**
      * @var string
      */
-    protected $method = 'POST';
-    protected $url = 'https://ad.toutiao.com/open_api/oauth2/access_token/';
+    private $method = 'POST';
+    private $url = 'https://ad.toutiao.com/open_api/oauth2/access_token/';
 }
