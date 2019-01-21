@@ -11,5 +11,20 @@ namespace core\Profile;
 interface RequestInteface
 {
     public function getUrl();
+
+    public function setUrl($url);
+
     public function getMethod();
+
+    public function setParams($array);
+
+    public function getParams();
+
+    public function addParam($key, $value);
+
+    public function setHeaders($array);
+
+    public function addHeader($key, $value);
+
+    public function getHeaders();
 }

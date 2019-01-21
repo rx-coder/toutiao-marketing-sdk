@@ -6,24 +6,14 @@
  * Time: 15:07
  */
 namespace AdvertisingDelivery\V1;
-use core\Profile\RequestInteface;
+use core\Profile\RpcRequest;
 
-class CreateCampaign implements RequestInteface
+class CreateCampaign extends RpcRequest
 {
     /**
      * @var string
      */
     protected $method = 'POST';
     protected $url = 'https://ad.toutiao.com/open_api/2/campaign/create/';
-
-    public function getMethod()
-    {
-        return $this->method;
-    }
-
-    public function getUrl()
-    {
-        return $this->url;
-    }
 }
 

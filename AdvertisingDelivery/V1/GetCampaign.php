@@ -7,9 +7,10 @@
  */
 
 namespace AdvertisingDelivery\V1;
-use core\Profile\RequestInteface;
 
-class GetCampaign implements RequestInteface
+use core\Profile\RpcRequest;
+
+class GetCampaign extends RpcRequest
 {
     /**
      * @var string
@@ -17,13 +18,4 @@ class GetCampaign implements RequestInteface
     protected $method = 'GET';
     protected $url = 'https://ad.toutiao.com/open_api/2/campaign/get/';
 
-    public function getMethod()
-    {
-        return $this->method;
-    }
-
-    public function getUrl()
-    {
-        return $this->url;
-    }
 }

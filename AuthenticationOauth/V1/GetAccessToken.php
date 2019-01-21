@@ -6,23 +6,13 @@
  * Time: 10:31
  */
 namespace AuthenticationOauth\V1;
-use core\Profile\RequestInteface;
+use core\Profile\RpcRequest;
 
-class GetAccessToken implements RequestInteface
+class GetAccessToken extends RpcRequest
 {
     /**
      * @var string
      */
     protected $method = 'POST';
     protected $url = 'https://ad.toutiao.com/open_api/oauth2/access_token/';
-
-    public function getMethod()
-    {
-        return $this->method;
-    }
-
-    public function getUrl()
-    {
-        return $this->url;
-    }
 }

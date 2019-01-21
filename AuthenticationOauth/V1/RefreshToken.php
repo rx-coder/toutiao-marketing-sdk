@@ -8,9 +8,9 @@
 
 namespace AuthenticationOauth\V1;
 
-use core\Profile\RequestInteface;
+use core\Profile\RpcRequest;
 
-class RefreshToken implements RequestInteface
+class RefreshToken extends RpcRequest
 {
     /**
      * @var string
