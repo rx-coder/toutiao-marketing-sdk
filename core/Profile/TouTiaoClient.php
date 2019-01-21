@@ -95,7 +95,7 @@ class TouTiaoClient
     }
 
     /**
-     *
+     * push执行
      * @return \core\Http\HttpResponse
      * @throws TouTiaoException
      */

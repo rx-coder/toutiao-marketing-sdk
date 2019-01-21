@@ -1,6 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
+ * 刷新access_token
  * User: zhangwenzong
  * Date: 2019/1/21
  * Time: 11:10
