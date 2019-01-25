@@ -15,7 +15,6 @@ class GetCampaign extends RpcRequest
     /**
      * @var string
      */
-    private $method = 'GET';
-    private $url = 'https://ad.toutiao.com/open_api/2/campaign/get/';
-
+    protected $method = 'GET';
+    protected $url = '/2/campaign/get/';
 }

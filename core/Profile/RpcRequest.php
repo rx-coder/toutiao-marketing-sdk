@@ -8,27 +8,30 @@
 
 namespace core\Profile;
 
+use core\Exception\InvalidParamException;
+use core\Exception\TouTiaoException;
+
 class RpcRequest implements RequestInteface
 {
     /**
      * request url
      */
-    private $url = '';
+    protected $url = '';
 
     /**
      * request method
      */
-    private $method = 'GET';
+    protected $method = 'GET';
 
     /**
      * request query params or raw body
      */
-    private $params = [];
+    protected $params = [];
 
     /**
-     * request header
+     * request header Content-Type
      */
-    private $headers = [];
+    protected $content_type = 'application/json';
 
     public function setUrl($url)
     {
@@ -63,20 +66,22 @@ class RpcRequest implements RequestInteface
         return $this;
     }
 
-    public function setHeaders($array)
+    public function getContentType()
     {
-        $this->headers = $array;
-        return $this;
+        return $this->content_type;
     }
 
-    public function addHeader($key, $value)
+    /**
+     * @param $attribute
+     * @throws InvalidParamException
+     */
+    public function checkRequred($attribute)
     {
-        $this->headers[$key] = $value;
-        return $this;
-    }
-
-    public function getHeaders()
-    {
-        return $this->headers;
+        if (!isset($this->params[$attribute])) {
+            $words = explode('_', $attribute);
+            $words = array_map('ucfirst', $words);
+            $string = implode(' ', $words);
+            throw new InvalidParamException($string . 'is required, please check params');
+        }
     }
 }

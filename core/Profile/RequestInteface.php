@@ -22,9 +22,5 @@ interface RequestInteface
 
     public function addParam($key, $value);
 
-    public function setHeaders($array);
-
-    public function addHeader($key, $value);
-
-    public function getHeaders();
+    public function getContentType();
 }

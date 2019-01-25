@@ -13,7 +13,8 @@ class CreateCampaign extends RpcRequest
     /**
      * @var string
      */
-    private $method = 'POST';
-    private $url = 'https://ad.toutiao.com/open_api/2/campaign/create/';
+    protected $method = 'POST';
+    protected $url = '/2/campaign/create/';
+
 }
 

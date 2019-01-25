@@ -8,101 +8,43 @@
 
 namespace core\Profile;
 
-use AdvertisingDelivery\V1\GetCampaign;
-use AuthenticationOauth\V1\GetAccessToken;
-use AuthenticationOauth\V1\GetAuthCodeUrl;
-use AuthenticationOauth\V1\RefreshToken;
 use core\Exception\TouTiaoException;
 use core\Http\HttpRequest;
 
 class TouTiaoClient
 {
+    public $access_token;
 
-    public $app_id;
+    public $server_url = 'https://ad.toutiao.com/open_api';
 
-    public $secret;
+    public $box_url = 'https://test-ad.toutiao.com/open_api';
 
-    public $profile;
+    public $is_sanbox = false;
 
-    public $params;
-
-    public $headers = [];
-
-
-    public function __construct($app_id, $secret)
+    public function __construct($access_token, $is_sanbox = false, $server_url = null, $box_url = null)
     {
-        $this->app_id = $app_id;
-        $this->secret = $secret;
+        $this->access_token = $access_token;
+        $this->is_sanbox = $is_sanbox;
+        if (null !== $server_url) $this->server_url = $server_url;
+        if (null !== $box_url) $this->box_url = $box_url;
     }
 
     /**
-     * 获取广告组
-     * @return string
-     * @throws TouTiaoException
-     */
-    public function getCampaign()
-    {
-        return self::push(new GetCampaign())->getBody();
-    }
-
-
-    /**
-     * 获得auth_code的url地址
-     * @return string
-     */
-    public function getAuthCodeUrl()
-    {
-        $obj = new GetAuthCodeUrl();
-        $obj->setUrl($this->app_id);
-        return $obj->getUrl();
-    }
-
-    /**
-     * 获取access_token
-     * @return string
-     * @throws TouTiaoException
-     */
-    public function getAccessToken()
-    {
-        $this->headers = ['Content-Type' => 'application/json'];
-        $this->params = array_merge($this->params, ['grant_type' => 'auth_code', 'app_id' => $this->app_id, 'secret' => $this->secret]);
-        return self::push(new GetAccessToken())->getBody();
-    }
-
-    /**
-     * 刷新access_token
-     * @return string
-     * @throws TouTiaoException
-     */
-    public function refreshToken()
-    {
-        $this->headers = ['Content-Type' => 'application/json'];
-        $this->params = array_merge($this->params, ['grant_type' => 'refresh_token', 'app_id' => $this->app_id, 'secret' => $this->secret]);
-        return self::push(new RefreshToken())->getBody();
-    }
-
-
-    public function setParams($params)
-    {
-        $this->params = $params;
-        return $this;
-    }
-
-    public function setHeaders($headers = false)
-    {
-        if ($headers) $this->headers = $headers;
-        return $this;
-    }
-
-    /**
-     * push执行
+     * @param RequestInteface $request
+     * @param null $url
      * @return \core\Http\HttpResponse
      * @throws TouTiaoException
      */
-    public function push(RequestInteface $inteface)
+    public function excute(RequestInteface $request, $url = null)
     {
-        return HttpRequest::curl($inteface->getUrl(), $inteface->getMethod(), json_encode($this->params), $this->headers);
+        $params = $request->getParams();
+        $headers = [
+            'Access-Token' => $this->access_token,
+            'Content-Type' => $request->getContentType()
+        ];
+        if (null == $url) {
+            $url = $this->server_url . $request->getUrl();
+        }
+        return HttpRequest::curl($url, $request->getMethod(), json_encode($params), $headers);
     }
-
-
 }

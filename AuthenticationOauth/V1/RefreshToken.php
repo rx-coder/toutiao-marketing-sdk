@@ -15,16 +15,6 @@ class RefreshToken extends RpcRequest
     /**
      * @var string
      */
-    private $method = 'POST';
-    private $url = 'https://ad.toutiao.com/open_api/oauth2/refresh_token/';
-
-    public function getMethod()
-    {
-        return $this->method;
-    }
-
-    public function getUrl()
-    {
-        return $this->url;
-    }
+    protected $method = 'POST';
+    protected $url = '/oauth2/refresh_token/';
 }
