@@ -12,6 +12,7 @@ $app_id = '';
 $secret = '';
 
 $auth = new \core\Profile\ToutiaoAuth($app_id, $secret);
+
 //案例1:获取Authcode Url
 //print_r($auth->getAuthCodeUrl("http://passion.haolints.com/"));
 
@@ -19,9 +20,15 @@ $auth = new \core\Profile\ToutiaoAuth($app_id, $secret);
 //print_r($auth->getAccessToken(''));
 
 //案例3:获取广告组
-new \AdvertisingDelivery\V1\CampaignGet();
-$client = $auth->makeClient('');
+/*$client = $auth->makeClient('');
 $req = new \AdvertisingDelivery\V1\CampaignGet();
 $req->setAdvertiserId('');
-var_dump($client->excute($req));
-exit();
+var_dump($client->excute($req)->getBody());*/
+
+
+//案例4:创建广告组
+/*$client = $auth->makeClient('');
+$req = new \AdvertisingDelivery\V1\CampaignCreate();
+$req->setAdvertiserId('')->setCampaignName('')->setBudgetMode('')->setLandingType('');
+var_dump($client->excute($req)->getBody());
+exit();*/
