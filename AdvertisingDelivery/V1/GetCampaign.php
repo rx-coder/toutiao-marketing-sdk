@@ -1,6 +1,7 @@
 <?php
 /**
  * 获取广告组
+ * https://ad.toutiao.com/openapi/doc/index.html?id=153
  * User: zhangwenzong
  * Date: 2019/1/17
  * Time: 14:28
