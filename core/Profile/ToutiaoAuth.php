@@ -64,6 +64,7 @@ class ToutiaoAuth
 
     /**
      * 获取access_token
+     * @param $auth_code
      * @return string
      * @throws TouTiaoException
      */

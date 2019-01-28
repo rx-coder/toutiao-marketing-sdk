@@ -12,19 +12,16 @@ $app_id = '';
 $secret = '';
 
 $auth = new \core\Profile\ToutiaoAuth($app_id, $secret);
+//案例1:获取Authcode Url
+//print_r($auth->getAuthCodeUrl("http://passion.haolints.com/"));
 
-print_r($auth->getAuthCodeUrl("http://passion.haolints.com/"));
-
-exit();
+//案例2:获取token
 //print_r($auth->getAccessToken(''));
 
-
-print_r($auth->refreshToken(''));
-
-
+//案例3:获取广告组
+new \AdvertisingDelivery\V1\CampaignGet();
 $client = $auth->makeClient('');
-$req = new \AdvertisingDelivery\V1\GetCampaign();
-$req->
+$req = new \AdvertisingDelivery\V1\CampaignGet();
+$req->setAdvertiserId('');
 var_dump($client->excute($req));
-
 exit();

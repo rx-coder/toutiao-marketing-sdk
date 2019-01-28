@@ -41,5 +41,54 @@ class CampaignCreate extends RpcRequest
      * 取值范围: ≥ 0
      */
     private $budget;
+
+    /**
+     * 广告组推广目的
+     * 允许值: "LINK", "APP","DPA","GOODS"
+     */
+    private $landing_type;
+
+
+    /**
+     * @param mixed $advertiser_id
+     */
+    public function setAdvertiserId($advertiser_id)
+    {
+        $this->advertiser_id = $advertiser_id;
+    }
+
+    /**
+     * @param mixed $budget_mode
+     */
+    public function setBudgetMode($budget_mode)
+    {
+        $this->budget_mode = $budget_mode;
+    }
+
+    /**
+     * @param mixed $budget
+     */
+    public function setBudget($budget)
+    {
+        $this->budget = $budget;
+    }
+
+    /**
+     * @param mixed $landing_type
+     */
+    public function setLandingType($landing_type)
+    {
+        $this->landing_type = $landing_type;
+    }
+
+    /**
+     * @param mixed $campaign_name
+     */
+    public function setCampaignName($campaign_name)
+    {
+        $this->campaign_name = $campaign_name;
+    }
+
+
 }
 
