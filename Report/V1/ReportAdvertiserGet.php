@@ -9,6 +9,7 @@
 
 namespace Report\V1;
 
+use core\Helper\RequestCheckUtil;
 use core\Profile\RpcRequest;
 
 class ReportAdvertiserGet extends RpcRequest
@@ -164,5 +165,15 @@ class ReportAdvertiserGet extends RpcRequest
         $this->params['time_granularity'] = $time_granularity;
         $this->time_granularity = $time_granularity;
         return $this;
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function check()
+    {
+        RequestCheckUtil::checkNotNull($this->advertiser_id, 'advertiser_id');
+        RequestCheckUtil::checkNotNull($this->start_date, 'start_date');
+        RequestCheckUtil::checkNotNull($this->end_date, 'end_date');
     }
 }
