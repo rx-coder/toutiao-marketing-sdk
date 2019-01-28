@@ -72,4 +72,8 @@ class RpcRequest implements RequestInteface
         return $this->content_type;
     }
 
+    public function check()
+    {
+        // TODO: Implement check() method.
+    }
 }

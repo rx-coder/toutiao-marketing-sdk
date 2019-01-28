@@ -23,4 +23,6 @@ interface RequestInteface
     public function addParam($key, $value);
 
     public function getContentType();
+
+    public function check();
 }

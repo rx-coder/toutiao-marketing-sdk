@@ -37,6 +37,7 @@ class TouTiaoClient
      */
     public function excute(RequestInteface $request, $url = null)
     {
+        $request->check();
         $params = $request->getParams();
         $headers = [
             'Access-Token' => $this->access_token,
