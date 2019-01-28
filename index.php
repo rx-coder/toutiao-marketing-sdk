@@ -1,13 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
+ * 引入文件
  * User: zhangwenzong
- * Date: 2019/1/17
- * Time: 12:07
+ * Date: 2019/1/28
+ * Time: 14:34
  */
 
 use  core\Autoloader\Autoloader;
 
-require_once __DIR__ . '/../Autoloader/Autoloader.php';
+require_once __DIR__ . '/core/Autoloader/Autoloader.php';
 define('ENABLE_HTTP_PROXY', false);
 Autoloader::loadDirectories();
