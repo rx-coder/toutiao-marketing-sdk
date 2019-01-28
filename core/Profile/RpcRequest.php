@@ -54,12 +54,16 @@ class RpcRequest implements RequestInteface
     public function addParam($key, $value)
     {
         $this->params[$key] = $value;
+        $this->$key = $value;
         return $this;
     }
 
     public function setParams($array)
     {
         $this->params = $array;
+        foreach ($array as $key => $value) {
+            $this->$key = $value;
+        }
         return $this;
     }
 
