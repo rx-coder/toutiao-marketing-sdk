@@ -8,9 +8,6 @@
 
 namespace core\Profile;
 
-use core\Exception\InvalidParamException;
-use core\Exception\TouTiaoException;
-
 class RpcRequest implements RequestInteface
 {
     /**
@@ -71,17 +68,4 @@ class RpcRequest implements RequestInteface
         return $this->content_type;
     }
 
-    /**
-     * @param $attribute
-     * @throws InvalidParamException
-     */
-    public function checkRequred($attribute)
-    {
-        if (!isset($this->params[$attribute])) {
-            $words = explode('_', $attribute);
-            $words = array_map('ucfirst', $words);
-            $string = implode(' ', $words);
-            throw new InvalidParamException($string . 'is required, please check params');
-        }
-    }
 }
