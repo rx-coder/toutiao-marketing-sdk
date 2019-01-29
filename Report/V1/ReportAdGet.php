@@ -85,7 +85,7 @@ class ReportAdGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getStartDate()
     {
@@ -93,7 +93,7 @@ class ReportAdGet extends RpcRequest
     }
 
     /**
-     * @param mixed $start_date
+     * @param string $start_date
      * @return $this
      */
     public function setStartDate($start_date)
@@ -104,7 +104,7 @@ class ReportAdGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getEndDate()
     {
@@ -112,7 +112,7 @@ class ReportAdGet extends RpcRequest
     }
 
     /**
-     * @param $end_date
+     * @param string $end_date
      * @return $this
      */
     public function setEndDate($end_date)
@@ -123,7 +123,7 @@ class ReportAdGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getPage()
     {
@@ -131,7 +131,7 @@ class ReportAdGet extends RpcRequest
     }
 
     /**
-     * @param $page
+     * @param integer $page
      * @return $this
      */
     public function setPage($page)
@@ -142,7 +142,7 @@ class ReportAdGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getPageSize()
     {
@@ -150,7 +150,7 @@ class ReportAdGet extends RpcRequest
     }
 
     /**
-     * @param $page_size
+     * @param integer $page_size
      * @return $this
      */
     public function setPageSize($page_size)
@@ -161,7 +161,7 @@ class ReportAdGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getGroupBy()
     {
@@ -169,7 +169,7 @@ class ReportAdGet extends RpcRequest
     }
 
     /**
-     * @param $group_by
+     * @param array $group_by
      * @return $this
      */
     public function setGroupBy($group_by)
@@ -180,7 +180,7 @@ class ReportAdGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getTimeGranularity()
     {
@@ -188,7 +188,7 @@ class ReportAdGet extends RpcRequest
     }
 
     /**
-     * @param $time_granularity
+     * @param string $time_granularity
      * @return $this
      */
     public function setTimeGranularity($time_granularity)
@@ -199,7 +199,7 @@ class ReportAdGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getFiltering()
     {
@@ -207,10 +207,10 @@ class ReportAdGet extends RpcRequest
     }
 
     /**
-     * @param $filtering
+     * @param array $filtering
      * @return $this
      */
-    public function setFiltering(array $filtering)
+    public function setFiltering($filtering)
     {
         $this->params['filtering'] = $filtering;
         $this->filtering = $filtering;
@@ -221,7 +221,7 @@ class ReportAdGet extends RpcRequest
      * @param array $filtering
      * @return $this
      */
-    public function addFiltering(array $filtering)
+    public function addFiltering($filtering)
     {
         $filtering = array_merge($this->filtering, $filtering);
         $this->params['filtering'] = $filtering;

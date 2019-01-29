@@ -162,7 +162,7 @@ class ReportCampaignGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getGroupBy()
     {
@@ -170,7 +170,7 @@ class ReportCampaignGet extends RpcRequest
     }
 
     /**
-     * @param $group_by
+     * @param array $group_by
      * @return $this
      */
     public function setGroupBy($group_by)
@@ -211,7 +211,7 @@ class ReportCampaignGet extends RpcRequest
      * @param $filtering
      * @return $this
      */
-    public function setFiltering(array $filtering)
+    public function setFiltering($filtering)
     {
         $this->params['filtering'] = $filtering;
         $this->filtering = $filtering;
@@ -222,7 +222,7 @@ class ReportCampaignGet extends RpcRequest
      * @param array $filtering
      * @return $this
      */
-    public function addFiltering(array $filtering)
+    public function addFiltering($filtering)
     {
         $filtering = array_merge($this->filtering, $filtering);
         $this->params['filtering'] = $filtering;

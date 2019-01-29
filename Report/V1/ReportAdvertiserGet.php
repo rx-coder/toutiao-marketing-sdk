@@ -60,7 +60,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @param $advertiser_id
+     * @param mixed $advertiser_id
      * @return $this
      */
     public function setAdvertiserId($advertiser_id)
@@ -71,7 +71,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getStartDate()
     {
@@ -79,7 +79,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @param mixed $start_date
+     * @param string $start_date
      * @return $this
      */
     public function setStartDate($start_date)
@@ -90,7 +90,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getEndDate()
     {
@@ -98,7 +98,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @param mixed $end_date
+     * @param string $end_date
      * @return $this
      */
     public function setEndDate($end_date)
@@ -109,7 +109,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getPage()
     {
@@ -117,7 +117,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @param mixed $page
+     * @param integer $page
      * @return $this
      */
     public function setPage($page)
@@ -128,7 +128,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getPageSize()
     {
@@ -136,7 +136,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @param mixed $page_size
+     * @param integer $page_size
      * @return $this
      */
     public function setPageSize($page_size)
@@ -147,7 +147,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getTimeGranularity()
     {
@@ -155,7 +155,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @param mixed $time_granularity
+     * @param string $time_granularity
      * @return $this
      */
     public function setTimeGranularity($time_granularity)

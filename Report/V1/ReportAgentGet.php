@@ -79,7 +79,7 @@ class ReportAgentGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getStartDate()
     {
@@ -87,7 +87,7 @@ class ReportAgentGet extends RpcRequest
     }
 
     /**
-     * @param mixed $start_date
+     * @param string $start_date
      * @return $this
      */
     public function setStartDate($start_date)
@@ -98,7 +98,7 @@ class ReportAgentGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getEndDate()
     {
@@ -106,7 +106,7 @@ class ReportAgentGet extends RpcRequest
     }
 
     /**
-     * @param $end_date
+     * @param string $end_date
      * @return $this
      */
     public function setEndDate($end_date)
@@ -117,7 +117,7 @@ class ReportAgentGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getPage()
     {
@@ -125,7 +125,7 @@ class ReportAgentGet extends RpcRequest
     }
 
     /**
-     * @param $page
+     * @param integer $page
      * @return $this
      */
     public function setPage($page)
@@ -136,7 +136,7 @@ class ReportAgentGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return integer
      */
     public function getPageSize()
     {
@@ -144,7 +144,7 @@ class ReportAgentGet extends RpcRequest
     }
 
     /**
-     * @param $page_size
+     * @param integer $page_size
      * @return $this
      */
     public function setPageSize($page_size)
@@ -155,7 +155,7 @@ class ReportAgentGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getGroupBy()
     {
@@ -163,7 +163,7 @@ class ReportAgentGet extends RpcRequest
     }
 
     /**
-     * @param $group_by
+     * @param array $group_by
      * @return $this
      */
     public function setGroupBy($group_by)
@@ -174,7 +174,7 @@ class ReportAgentGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getTimeGranularity()
     {
@@ -182,7 +182,7 @@ class ReportAgentGet extends RpcRequest
     }
 
     /**
-     * @param $time_granularity
+     * @param string $time_granularity
      * @return $this
      */
     public function setTimeGranularity($time_granularity)

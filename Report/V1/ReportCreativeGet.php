@@ -200,7 +200,7 @@ class ReportCreativeGet extends RpcRequest
     }
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getFiltering()
     {
@@ -208,10 +208,10 @@ class ReportCreativeGet extends RpcRequest
     }
 
     /**
-     * @param $filtering
+     * @param array $filtering
      * @return $this
      */
-    public function setFiltering(array $filtering)
+    public function setFiltering($filtering)
     {
         $this->params['filtering'] = $filtering;
         $this->filtering = $filtering;
@@ -222,7 +222,7 @@ class ReportCreativeGet extends RpcRequest
      * @param array $filtering
      * @return $this
      */
-    public function addFiltering(array $filtering)
+    public function addFiltering($filtering)
     {
         $filtering = array_merge($this->filtering, $filtering);
         $this->params['filtering'] = $filtering;
