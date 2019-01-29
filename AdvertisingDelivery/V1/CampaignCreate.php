@@ -9,6 +9,8 @@
 
 namespace AdvertisingDelivery\V1;
 
+use core\Exception\InvalidParamException;
+use core\Helper\RequestCheckUtil;
 use core\Profile\RpcRequest;
 
 class CampaignCreate extends RpcRequest
@@ -51,42 +53,72 @@ class CampaignCreate extends RpcRequest
 
     /**
      * @param mixed $advertiser_id
+     * @return $this
      */
     public function setAdvertiserId($advertiser_id)
     {
+        $this->params['advertiser_id'] = $advertiser_id;
         $this->advertiser_id = $advertiser_id;
+        return $this;
     }
 
     /**
      * @param mixed $budget_mode
+     * @return $this
      */
     public function setBudgetMode($budget_mode)
     {
+        $this->params['budget_mode'] = $budget_mode;
         $this->budget_mode = $budget_mode;
+        return $this;
     }
 
     /**
      * @param mixed $budget
+     * @return $this
      */
     public function setBudget($budget)
     {
+        $this->params['budget'] = $budget;
         $this->budget = $budget;
+        return $this;
     }
 
     /**
      * @param mixed $landing_type
+     * @return $this
      */
     public function setLandingType($landing_type)
     {
+        $this->params['landing_type'] = $landing_type;
         $this->landing_type = $landing_type;
+        return $this;
     }
 
     /**
      * @param mixed $campaign_name
+     * @return $this
      */
     public function setCampaignName($campaign_name)
     {
+        $this->params['campaign_name'] = $campaign_name;
         $this->campaign_name = $campaign_name;
+        return $this;
+    }
+
+    /**
+     *
+     * @throws InvalidParamException
+     */
+    public function check()
+    {
+        RequestCheckUtil::checkNotNull($this->advertiser_id, 'advertiser_id');
+        RequestCheckUtil::checkNotNull($this->campaign_name, 'campaign_name');
+        RequestCheckUtil::checkNotNull($this->budget_mode, 'budget_mode');
+        RequestCheckUtil::checkNotNull($this->landing_type, 'landing_type');
+        RequestCheckUtil::checkMaxLength($this->campaign_name, 100, 'campaign_name');
+        RequestCheckUtil::checkAllowField($this->landing_type, ['LINK', 'APP', 'DPA', 'GOODS'], 'landing_type');
+        RequestCheckUtil::checkAllowField($this->budget_mode, ['BUDGET_MODE_INFINITE', 'BUDGET_MODE_DAY'], 'budget_mode');
     }
 
 

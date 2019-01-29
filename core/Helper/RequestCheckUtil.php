@@ -4,6 +4,7 @@
  * Date: 2019/1/25
  * Time: 16:21
  */
+
 namespace core\Helper;
 
 use core\Exception\InvalidParamException;
@@ -17,10 +18,11 @@ class RequestCheckUtil
      * @param $fieldName
      * @throws InvalidParamException
      */
-    public static function checkNotNull($value,$fieldName) {
+    public static function checkNotNull($value, $fieldName)
+    {
 
-        if(self::checkEmpty($value)){
-            throw new InvalidParamException("client-check-error:Missing Required Arguments: " .$fieldName , 40);
+        if (self::checkEmpty($value)) {
+            throw new InvalidParamException("client-check-error:Missing Required Arguments: " . $fieldName, 40);
         }
     }
 
@@ -32,9 +34,10 @@ class RequestCheckUtil
      * @param $fieldName
      * @throws InvalidParamException
      */
-    public static function checkMaxLength($value,$maxLength,$fieldName){
-        if(!self::checkEmpty($value) && mb_strlen($value , "UTF-8") > $maxLength){
-            throw new InvalidParamException("client-check-error:Invalid Arguments:the length of " .$fieldName . " can not be larger than " . $maxLength . "." , 41);
+    public static function checkMaxLength($value, $maxLength, $fieldName)
+    {
+        if (!self::checkEmpty($value) && mb_strlen($value, "UTF-8") > $maxLength) {
+            throw new InvalidParamException("client-check-error:Invalid Arguments:the length of " . $fieldName . " can not be larger than " . $maxLength . ".", 41);
         }
     }
 
@@ -46,15 +49,34 @@ class RequestCheckUtil
      * @param $fieldName
      * @throws InvalidParamException
      */
-    public static function checkMaxListSize($value,$maxSize,$fieldName) {
+    public static function checkMaxListSize($value, $maxSize, $fieldName)
+    {
 
-        if(self::checkEmpty($value))
-            return ;
+        if (self::checkEmpty($value))
+            return;
 
-        $list=preg_split("/,/",$value);
-        if(count($list) > $maxSize){
-            throw new InvalidParamException("client-check-error:Invalid Arguments:the listsize(the string split by \",\") of ". $fieldName . " must be less than " . $maxSize . " ." , 41);
+        $list = preg_split("/,/", $value);
+        if (count($list) > $maxSize) {
+            throw new InvalidParamException("client-check-error:Invalid Arguments:the listsize(the string split by \",\") of " . $fieldName . " must be less than " . $maxSize . " .", 41);
         }
+    }
+
+    /**
+     * 限制允许字段
+     * @param $value
+     * @param $array
+     * @param $fieldName
+     * @throws InvalidParamException
+     */
+    public static function checkAllowField($value, $array, $fieldName)
+    {
+        if (self::checkEmpty($value))
+            return;
+
+        if (!in_array($value, $array)) {
+            throw new InvalidParamException("client-check-error:AllowField of " . $fieldName . "   .", 41);
+        }
+
     }
 
     /**
@@ -65,15 +87,16 @@ class RequestCheckUtil
      * @param $fieldName
      * @throws InvalidParamException
      */
-    public static function checkMaxValue($value,$maxValue,$fieldName){
+    public static function checkMaxValue($value, $maxValue, $fieldName)
+    {
 
-        if(self::checkEmpty($value))
-            return ;
+        if (self::checkEmpty($value))
+            return;
 
-        self::checkNumeric($value,$fieldName);
+        self::checkNumeric($value, $fieldName);
 
-        if($value > $maxValue){
-            throw new InvalidParamException("client-check-error:Invalid Arguments:the value of " . $fieldName . " can not be larger than " . $maxValue ." ." , 41);
+        if ($value > $maxValue) {
+            throw new InvalidParamException("client-check-error:Invalid Arguments:the value of " . $fieldName . " can not be larger than " . $maxValue . " .", 41);
         }
     }
 
@@ -83,15 +106,16 @@ class RequestCheckUtil
      * @param $fieldName
      * @throws InvalidParamException
      */
-    public static function checkMinValue($value,$minValue,$fieldName) {
+    public static function checkMinValue($value, $minValue, $fieldName)
+    {
 
-        if(self::checkEmpty($value))
-            return ;
+        if (self::checkEmpty($value))
+            return;
 
-        self::checkNumeric($value,$fieldName);
+        self::checkNumeric($value, $fieldName);
 
-        if($value < $minValue){
-            throw new InvalidParamException("client-check-error:Invalid Arguments:the value of " . $fieldName . " can not be less than " . $minValue . " ." , 41);
+        if ($value < $minValue) {
+            throw new InvalidParamException("client-check-error:Invalid Arguments:the value of " . $fieldName . " can not be less than " . $minValue . " .", 41);
         }
     }
 
@@ -100,23 +124,25 @@ class RequestCheckUtil
      * @param $fieldName
      * @throws InvalidParamException
      */
-    protected static function checkNumeric($value,$fieldName) {
-        if(!is_numeric($value))
-            throw new InvalidParamException("client-check-error:Invalid Arguments:the value of " . $fieldName . " is not number : " . $value . " ." , 41);
+    protected static function checkNumeric($value, $fieldName)
+    {
+        if (!is_numeric($value))
+            throw new InvalidParamException("client-check-error:Invalid Arguments:the value of " . $fieldName . " is not number : " . $value . " .", 41);
     }
 
     /**
      * @param $value
      * @return bool
      */
-    public static function checkEmpty($value) {
-        if(!isset($value))
-            return true ;
-        if($value === null )
+    public static function checkEmpty($value)
+    {
+        if (!isset($value))
             return true;
-        if(is_array($value) && count($value) == 0)
+        if ($value === null)
             return true;
-        if(is_string($value) &&trim($value) === "")
+        if (is_array($value) && count($value) == 0)
+            return true;
+        if (is_string($value) && trim($value) === "")
             return true;
 
         return false;
