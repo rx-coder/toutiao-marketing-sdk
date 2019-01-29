@@ -30,5 +30,11 @@ var_dump($client->excute($req)->getBody());*/
 /*$client = $auth->makeClient('');
 $req = new \AdvertisingDelivery\V1\CampaignCreate();
 $req->setAdvertiserId('')->setCampaignName('')->setBudgetMode('')->setLandingType('');
+var_dump($client->excute($req)->getBody());*/
+
+
+//案例5:修改广告组
+$client = $auth->makeClient('');
+$req = new \AdvertisingDelivery\V1\CampaignUpdate();
+$req->setAdvertiserId('')->setCampaignId('')->setCampaignName('')->setModifyTime('');
 var_dump($client->excute($req)->getBody());
-exit();*/
