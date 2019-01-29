@@ -1,21 +1,20 @@
 <?php
 /**
- * 广告主数据（新版）
- * https://ad.toutiao.com/openapi/doc/index.html?id=243
+ * 广告计划数据（新版）
+ * https://ad.toutiao.com/openapi/doc/index.html?id=188
  * User: Sumyf
  * Date: 2019/1/28
- * Time: 16:20
+ * Time: 18:28
  */
 
 namespace Report\V1;
 
-use core\Exception\InvalidParamException;
 use core\Helper\RequestCheckUtil;
 use core\Profile\RpcRequest;
 
-class ReportAdvertiserGet extends RpcRequest
+class ReportAdGet extends RpcRequest
 {
-    protected $url = '/2/report/advertiser/get/';
+    protected $url = '/2/report/ad/get/';
     protected $content_type = 'application/json';
     protected $method = 'GET';
 
@@ -35,21 +34,36 @@ class ReportAdvertiserGet extends RpcRequest
     private $end_date;
 
     /**
-     * 搜索页码, 默认值为1
+     * 搜索页码 默认值: 1
      */
     private $page;
 
     /**
-     * 一页展示的数据数量
+     * 一页展示的数据数量 默认值: 20
      */
     private $page_size;
 
     /**
-     * 时间粒度 "STAT_TIME_GRANULARITY_DAILY"表示天, "STAT_TIME_GRANULARITY_HOURLY"表示小时
+     * 分组条件，默认为STAT_GROUP_BY_FIELD_STAT_TIME "STAT_GROUP_BY_FIELD_STAT_TIME"表示按时间分组,"STAT_GROUP_BY_FIELD_ID"表示按id分组
+     * 允许值: "STAT_GROUP_BY_FIELD_STAT_TIME", "STAT_GROUP_BY_FIELD_ID"
+     * 假设一次查询中共有m个id，n个时间，有以下三种情况：‍
+     * ①group_by=["STAT_GROUP_BY_FIELD_STAT_TIME"]表示数据按照时间聚合，即本次返回最多为n个数据，表示将m个id的数据根据n个时间各自累计，因此返回中没有相应的id。‍
+     * ②group_by=["STAT_GROUP_BY_FIELD_ID"]表示按照id聚合，本次返回最多返回m条数据，即将n天的数据按照m个id各自累加。‍
+     * ③group_by=["STAT_GROUP_BY_FIELD_ID", "STAT_GROUP_BY_FIELD_STAT_TIME"]表示按照时间和id同时聚合，最多返回m * n个数据，返回数据中会同时存在id和时间
+     */
+    private $group_by;
+
+    /**
+     * 时间粒度, 当分组为"STAT_GROUP_BY_FIELD_ID"无效。 "STAT_TIME_GRANULARITY_DAILY"表示天, "STAT_TIME_GRANULARITY_HOURLY"表示小时
      * 默认值: STAT_TIME_GRANULARITY_DAILY
      * 允许值: "STAT_TIME_GRANULARITY_DAILY","STAT_TIME_GRANULARITY_HOURLY"
      */
     private $time_granularity;
+
+    /**
+     * 过滤字段，json格式，如果campaign_ids、ad_ids都  不填默认按照广告主过滤，支持字段如下
+     */
+    private $filtering;
 
     /**
      * @return mixed
@@ -60,7 +74,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @param $advertiser_id
+     * @param mixed $advertiser_id
      * @return $this
      */
     public function setAdvertiserId($advertiser_id)
@@ -98,7 +112,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @param mixed $end_date
+     * @param $end_date
      * @return $this
      */
     public function setEndDate($end_date)
@@ -117,7 +131,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @param mixed $page
+     * @param $page
      * @return $this
      */
     public function setPage($page)
@@ -136,7 +150,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @param mixed $page_size
+     * @param $page_size
      * @return $this
      */
     public function setPageSize($page_size)
@@ -149,13 +163,32 @@ class ReportAdvertiserGet extends RpcRequest
     /**
      * @return mixed
      */
+    public function getGroupBy()
+    {
+        return $this->group_by;
+    }
+
+    /**
+     * @param $group_by
+     * @return $this
+     */
+    public function setGroupBy($group_by)
+    {
+        $this->params['group_by'] = $group_by;
+        $this->group_by = $group_by;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getTimeGranularity()
     {
         return $this->time_granularity;
     }
 
     /**
-     * @param mixed $time_granularity
+     * @param $time_granularity
      * @return $this
      */
     public function setTimeGranularity($time_granularity)
@@ -166,7 +199,38 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @throws InvalidParamException
+     * @return mixed
+     */
+    public function getFiltering()
+    {
+        return $this->filtering;
+    }
+
+    /**
+     * @param $filtering
+     * @return $this
+     */
+    public function setFiltering(array $filtering)
+    {
+        $this->params['filtering'] = $filtering;
+        $this->filtering = $filtering;
+        return $this;
+    }
+
+    /**
+     * @param array $filtering
+     * @return $this
+     */
+    public function addFiltering(array $filtering)
+    {
+        $filtering = array_merge($this->filtering, $filtering);
+        $this->params['filtering'] = $filtering;
+        $this->filtering = $filtering;
+        return $this;
+    }
+
+    /**
+     * @throws \core\Exception\InvalidParamException
      */
     public function check()
     {

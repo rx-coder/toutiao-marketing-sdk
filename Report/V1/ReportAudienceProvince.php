@@ -1,23 +1,22 @@
 <?php
 /**
- * 广告主数据（新版）
- * https://ad.toutiao.com/openapi/doc/index.html?id=243
+ * 受众分析数据-省级数据
+ * https://ad.toutiao.com/openapi/doc/index.html?id=88
  * User: Sumyf
- * Date: 2019/1/28
- * Time: 16:20
+ * Date: 2019/1/29
+ * Time: 10:45
  */
 
 namespace Report\V1;
 
-use core\Exception\InvalidParamException;
 use core\Helper\RequestCheckUtil;
 use core\Profile\RpcRequest;
 
-class ReportAdvertiserGet extends RpcRequest
+class ReportAudienceProvince extends RpcRequest
 {
-    protected $url = '/2/report/advertiser/get/';
-    protected $content_type = 'application/json';
+    protected $url = '/2/report/audience/province/';
     protected $method = 'GET';
+    protected $content_type = 'application/json';
 
     /**
      * 广告主ID
@@ -35,21 +34,21 @@ class ReportAdvertiserGet extends RpcRequest
     private $end_date;
 
     /**
-     * 搜索页码, 默认值为1
+     * 欲查询的指标的类型。"AUDIENCE_STAT_ID_TYPE_ADVERTISER"表示按广告主,"AUDIENCE_STAT_ID_TYPE_CAMPAIGN"表示按广告组, "AUDIENCE_STAT_ID_TYPE_AD"表示按广告计划
+     * 允许值: "AUDIENCE_STAT_ID_TYPE_ADVERTISER","AUDIENCE_STAT_ID_TYPE_CAMPAIGN", "AUDIENCE_STAT_ID_TYPE_AD"
      */
-    private $page;
+    private $id_type;
 
     /**
-     * 一页展示的数据数量
+     * 欲查询的id列表,最多添加100个id。id_type为广告主，选填。其他类型，必填。
      */
-    private $page_size;
+    private $ids;
 
     /**
-     * 时间粒度 "STAT_TIME_GRANULARITY_DAILY"表示天, "STAT_TIME_GRANULARITY_HOURLY"表示小时
-     * 默认值: STAT_TIME_GRANULARITY_DAILY
-     * 允许值: "STAT_TIME_GRANULARITY_DAILY","STAT_TIME_GRANULARITY_HOURLY"
+     * 查询指标列表
+     * 允许值: "cost", "show", "click", "download_finish", "convert"
      */
-    private $time_granularity;
+    private $metrics;
 
     /**
      * @return mixed
@@ -60,7 +59,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @param $advertiser_id
+     * @param mixed $advertiser_id
      * @return $this
      */
     public function setAdvertiserId($advertiser_id)
@@ -98,7 +97,7 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
-     * @param mixed $end_date
+     * @param $end_date
      * @return $this
      */
     public function setEndDate($end_date)
@@ -111,67 +110,71 @@ class ReportAdvertiserGet extends RpcRequest
     /**
      * @return mixed
      */
-    public function getPage()
+    public function getIdType()
     {
-        return $this->page;
+        return $this->id_type;
     }
 
     /**
-     * @param mixed $page
+     * @param $id_type string
      * @return $this
      */
-    public function setPage($page)
+    public function setIdType($id_type)
     {
-        $this->params['page'] = $page;
-        $this->page = $page;
+        $this->params['id_type'] = $id_type;
+        $this->id_type = $id_type;
         return $this;
     }
 
     /**
      * @return mixed
      */
-    public function getPageSize()
+    public function getIds()
     {
-        return $this->page_size;
+        return $this->ids;
     }
 
     /**
-     * @param mixed $page_size
+     * @param $ids array
      * @return $this
      */
-    public function setPageSize($page_size)
+    public function setIds($ids)
     {
-        $this->params['page_size'] = $page_size;
-        $this->page_size = $page_size;
+        $this->params['ids'] = $ids;
+        $this->ids = $ids;
         return $this;
     }
 
     /**
      * @return mixed
      */
-    public function getTimeGranularity()
+    public function getMetrics()
     {
-        return $this->time_granularity;
+        return $this->metrics;
     }
 
     /**
-     * @param mixed $time_granularity
+     * @param $metrics array
      * @return $this
      */
-    public function setTimeGranularity($time_granularity)
+    public function setMetrics($metrics)
     {
-        $this->params['time_granularity'] = $time_granularity;
-        $this->time_granularity = $time_granularity;
+        $this->params['metrics'] = $metrics;
+        $this->metrics = $metrics;
         return $this;
     }
 
     /**
-     * @throws InvalidParamException
+     * @throws \core\Exception\InvalidParamException
      */
     public function check()
     {
         RequestCheckUtil::checkNotNull($this->advertiser_id, 'advertiser_id');
         RequestCheckUtil::checkNotNull($this->start_date, 'start_date');
         RequestCheckUtil::checkNotNull($this->end_date, 'end_date');
+        RequestCheckUtil::checkNotNull($this->id_type, 'id_type');
+        RequestCheckUtil::checkNotNull($this->metrics, 'metrics');
     }
+
+
 }
