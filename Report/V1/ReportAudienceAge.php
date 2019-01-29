@@ -1,10 +1,10 @@
 <?php
 /**
- * 受众分析数据-省级数据
- * https://ad.toutiao.com/openapi/doc/index.html?id=88
+ * 受众分析数据 - 年龄数据
+ * https://ad.toutiao.com/openapi/doc/index.html?id=91
  * User: Sumyf
  * Date: 2019/1/29
- * Time: 10:45
+ * Time: 11:10
  */
 
 namespace Report\V1;
@@ -12,9 +12,9 @@ namespace Report\V1;
 use core\Helper\RequestCheckUtil;
 use core\Profile\RpcRequest;
 
-class ReportAudienceProvince extends RpcRequest
+class ReportAudienceAge extends RpcRequest
 {
-    protected $url = '/2/report/audience/province/';
+    protected $url = '/2/report/audience/age/';
     protected $method = 'GET';
     protected $content_type = 'application/json';
 
