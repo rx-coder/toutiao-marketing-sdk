@@ -1,6 +1,7 @@
 <?php
 /**
  * 修改广告组
+ * 修改广告组信息，可更改内容包括广告组名称、预算类型及预算，除此之外其他内容不允许修改。
  * https://ad.toutiao.com/openapi/doc/index.html?id=53
  * User: zhangwenzong
  * Date: 2019/1/18

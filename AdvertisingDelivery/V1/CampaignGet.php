@@ -1,6 +1,7 @@
 <?php
 /**
  * 获取广告组
+ * 获取广告组列表，可指定fields获取每个广告组的基本元素。
  * https://ad.toutiao.com/openapi/doc/index.html?id=153
  * User: zhangwenzong
  * Date: 2019/1/17
