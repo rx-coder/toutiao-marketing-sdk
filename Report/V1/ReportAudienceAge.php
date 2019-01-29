@@ -154,7 +154,7 @@ class ReportAudienceAge extends RpcRequest
     }
 
     /**
-     * @param $metrics array
+     * @param array $metrics
      * @return $this
      */
     public function setMetrics($metrics)
