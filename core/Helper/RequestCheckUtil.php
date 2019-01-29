@@ -73,6 +73,11 @@ class RequestCheckUtil
         if (self::checkEmpty($value))
             return;
 
+        if (is_array($value)) {
+            $di_array = array_diff($value, $array);
+            if (!empty($di_array)) throw new InvalidParamException("client-check-error:AllowField of " . $fieldName . "   .", 41);
+            return;
+        }
         if (!in_array($value, $array)) {
             throw new InvalidParamException("client-check-error:AllowField of " . $fieldName . "   .", 41);
         }

@@ -40,7 +40,13 @@ $req->setAdvertiserId('')->setCampaignId('')->setCampaignName('')->setModifyTime
 var_dump($client->excute($req)->getBody());*/
 
 //案例6:广告组更新状态
-$client = $auth->makeClient('');
+/*$client = $auth->makeClient('');
 $req = new \AdvertisingDelivery\V1\CampaignUpdateStatus();
 $req->setAdvertiserId('')->setCampaignIds(['', ''])->setOptStatus('');
-var_dump($client->excute($req)->getBody());
+var_dump($client->excute($req)->getBody());*/
+
+//案例6:获取广告计划
+/*$client = $auth->makeClient('');
+$req = new \AdvertisingPlan\V1\AdGet();
+$req->setAdvertiserId('')->setIds(['', ''])->setFields(['', '']);
+var_dump($client->excute($req)->getBody());*/
