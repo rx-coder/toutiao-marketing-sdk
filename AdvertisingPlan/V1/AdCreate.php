@@ -365,6 +365,7 @@ class AdCreate extends RpcRequest
      */
     public function setAdvertiserId($advertiser_id)
     {
+        $this->params['advertiser_id'] = $advertiser_id;
         $this->advertiser_id = $advertiser_id;
         return $this;
     }
