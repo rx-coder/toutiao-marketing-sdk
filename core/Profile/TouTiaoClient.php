@@ -46,6 +46,9 @@ class TouTiaoClient
         if (null == $url) {
             $url = $this->server_url . $request->getUrl();
         }
-        return HttpRequest::curl($url, $request->getMethod(), json_encode($params), $headers);
+        if (strpos($request->getContentType(), "json") > 0) {
+            $params = json_encode($params);
+        }
+        return HttpRequest::curl($url, $request->getMethod(), $params, $headers);
     }
 }

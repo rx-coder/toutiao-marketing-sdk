@@ -129,6 +129,18 @@ class RequestCheckUtil
      * @param $fieldName
      * @throws InvalidParamException
      */
+    public static function checkFileExist($value, $fieldName)
+    {
+        if (!file_exists($value)) {
+            throw new InvalidParamException("client-check-error:Invalid Arguments: the file of \"" . $fieldName . "\" is not exist: " . realpath($value));
+        }
+    }
+
+    /**
+     * @param $value
+     * @param $fieldName
+     * @throws InvalidParamException
+     */
     protected static function checkNumeric($value, $fieldName)
     {
         if (!is_numeric($value))

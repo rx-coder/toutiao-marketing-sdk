@@ -8,6 +8,7 @@
  */
 
 namespace core\Http;
+
 use core\Exception\TouTiaoException;
 
 class HttpRequest
@@ -63,6 +64,15 @@ class HttpRequest
             $httpHeaders = self::getHttpHearders($headers);
             curl_setopt($ch, CURLOPT_HTTPHEADER, $httpHeaders);
         }
+
+        if (class_exists('\CURLFile')) {
+            curl_setopt($ch, CURLOPT_SAFE_UPLOAD, true);
+        } else {
+            if (defined('CURLOPT_SAFE_UPLOAD')) {
+                curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);
+            }
+        }
+
         $httpResponse = new HttpResponse();
         $httpResponse->setBody(curl_exec($ch));
         $httpResponse->setStatus(curl_getinfo($ch, CURLINFO_HTTP_CODE));
@@ -82,11 +92,16 @@ class HttpRequest
      */
     public static function getPostHttpBody($postFildes)
     {
-        $content = '';
+        $isMultipart = false;
         foreach ($postFildes as $apiParamKey => $apiParamValue) {
-            $content .= "$apiParamKey=" . urlencode($apiParamValue) . '&';
+            if ("@" == substr($apiParamValue, 0, 1)) {
+                $isMultipart = true;
+                if (class_exists('\CURLFile')) {
+                    $postFildes[$apiParamKey] = new \CURLFile(substr($apiParamValue, 1));
+                }
+            }
         }
-        return substr($content, 0, -1);
+        return $isMultipart ? $postFildes : http_build_query($postFildes);
     }
 
     /**
