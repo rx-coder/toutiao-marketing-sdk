@@ -145,8 +145,5 @@ class ToolsAdConvertSelect extends RpcRequest
     public function check()
     {
         RequestCheckUtil::checkNotNull($this->advertiser_id, 'advertiser_id');
-        RequestCheckUtil::checkNotNull($this->external_url, 'external_url');
-        RequestCheckUtil::checkNotNull($this->package_name, 'package_name');
-        RequestCheckUtil::checkNotNull($this->itunes_url, 'itunes_url');
     }
 }
