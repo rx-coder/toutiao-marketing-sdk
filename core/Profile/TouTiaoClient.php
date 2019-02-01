@@ -8,6 +8,7 @@
 
 namespace core\Profile;
 
+use core\Exception\InvalidParamException;
 use core\Exception\TouTiaoException;
 use core\Http\HttpRequest;
 
@@ -44,7 +45,13 @@ class TouTiaoClient
             'Content-Type' => $request->getContentType()
         ];
         if (null == $url) {
-            $url = $this->server_url . $request->getUrl();
+            $url = $request->getUrl();
+            if ('' == $url) {
+                throw new InvalidParamException('Http url is required, and now url is \' \'');
+            }
+            if ("http" != substr($url, 0, 4)) {
+                $url = ($this->is_sanbox ? $this->box_url : $this->server_url) . $request->getUrl();
+            }
         }
         if (strpos($request->getContentType(), "json") > 0) {
             $params = json_encode($params);
