@@ -139,6 +139,9 @@ class ToolsAdConvertSelect extends RpcRequest
         return $this;
     }
 
+    /**
+     * @throws \core\Exception\InvalidParamException
+     */
     public function check()
     {
         RequestCheckUtil::checkNotNull($this->advertiser_id, 'advertiser_id');
