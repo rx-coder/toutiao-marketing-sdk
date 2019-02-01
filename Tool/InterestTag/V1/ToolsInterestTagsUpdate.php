@@ -14,7 +14,7 @@ use core\Profile\RpcRequest;
 
 class ToolsInterestTagsUpdate extends RpcRequest
 {
-    protected $url = '/2/tools/interest_tags/update';
+    protected $url = '/2/tools/interest_tags/update/';
     protected $method = 'POST';
     protected $content_type = 'application/json';
 

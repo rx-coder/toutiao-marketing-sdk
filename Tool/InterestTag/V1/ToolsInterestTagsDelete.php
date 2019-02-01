@@ -15,7 +15,7 @@ use core\Profile\RpcRequest;
 class ToolsInterestTagsDelete extends RpcRequest
 {
     protected $url = '/2/tools/interest_tags/delete/';
-    protected $method = 'POST';
+    protected $method = 'GET';
     protected $content_type = 'application/json';
 
     /**
