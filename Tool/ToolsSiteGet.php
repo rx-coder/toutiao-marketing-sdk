@@ -15,7 +15,7 @@ use core\Profile\RpcRequest;
 class ToolsSiteGet extends RpcRequest
 {
     protected $url = '/2/tools/site/get/';
-    protected $method = 'POST';
+    protected $method = 'GET';
     protected $content_type = 'application/json';
 
     /**
