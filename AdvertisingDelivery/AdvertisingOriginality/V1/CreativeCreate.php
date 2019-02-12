@@ -1,8 +1,6 @@
 <?php
 /**
  * 创建广告创意
- * 为提升创建创意的开发体验，解决创意创建时接口参数的冗余问题，对creative的三个相关接口（create、read、update）做了全新优化，同时新版接口支持视频广告的创建，为了给您带来更好体验，希望您能及时转移至新的接口，
- * 原（creative/create/、creative/read/、creative/update/）接口以后将不再进行更新维护，请及时迁移新接口。
  * https://ad.toutiao.com/openapi/doc/index.html?id=143
  * User: zhangwenzong
  * Date: 2019/2/12
