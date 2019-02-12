@@ -6,6 +6,7 @@
  * Date: 2019/2/12
  * Time: 10:27
  */
+namespace AdvertisingOriginality\V1;
 
 use core\Profile\RpcRequest;
 

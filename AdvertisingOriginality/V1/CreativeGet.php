@@ -8,6 +8,7 @@
  * Date: 2019/2/12
  * Time: 10:02
  */
+namespace AdvertisingOriginality\V1;
 
 use core\Exception\InvalidParamException;
 use core\Helper\RequestCheckUtil;
