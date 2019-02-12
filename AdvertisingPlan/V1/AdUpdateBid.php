@@ -45,34 +45,46 @@ class AdUpdateBid extends RpcRequest
 
     /**
      * @param mixed $advertiser_id
+     * @return $this
      */
     public function setAdvertiserId($advertiser_id)
     {
+        $this->params['advertiser_id'] = $advertiser_id;
         $this->advertiser_id = $advertiser_id;
+        return $this;
     }
 
     /**
      * @param mixed $ad_ids
+     * @return $this
      */
     public function setAdIds($ad_ids)
     {
+        $this->params['ad_ids'] = $ad_ids;
         $this->ad_ids = $ad_ids;
+        return $this;
     }
 
     /**
      * @param mixed $bid
+     * @return $this
      */
     public function setBid($bid)
     {
+        $this->params['bid'] = $bid;
         $this->bid = $bid;
+        return $this;
     }
 
     /**
      * @param mixed $data
+     * @return $this
      */
     public function setData($data)
     {
+        $this->params['data'] = $data;
         $this->data = $data;
+        return $this;
     }
 
     /**
@@ -81,8 +93,8 @@ class AdUpdateBid extends RpcRequest
      */
     public function check()
     {
-        RequestCheckUtil::checkNotNull($this->advertiser_id, 'advertiser_id');
-        RequestCheckUtil::checkNotNull($this->ad_ids, 'ad_ids');
+        //RequestCheckUtil::checkNotNull($this->advertiser_id, 'advertiser_id');
+        //RequestCheckUtil::checkNotNull($this->ad_ids, 'ad_ids');
     }
 
 

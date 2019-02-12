@@ -93,8 +93,8 @@ class AdUpdateBudget extends RpcRequest
      */
     public function check()
     {
-        RequestCheckUtil::checkNotNull($this->advertiser_id, 'advertiser_id');
-        RequestCheckUtil::checkNotNull($this->ad_id, 'ad_id');
+     //   RequestCheckUtil::checkNotNull($this->advertiser_id, 'advertiser_id');
+      //  RequestCheckUtil::checkNotNull($this->ad_id, 'ad_id');
     }
 
 
