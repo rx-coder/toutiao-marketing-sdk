@@ -302,7 +302,7 @@ class CreativeCreate extends RpcRequest
      * @param mixed $inventory_type
      * @return $this
      */
-    public function setInventoryType($inventory_type)
+    public function setInventoryType(array $inventory_type)
     {
         $this->params["inventory_type"] = $inventory_type;
         $this->inventory_type = $inventory_type;
@@ -346,7 +346,7 @@ class CreativeCreate extends RpcRequest
      * @param mixed $ad_keywords
      * @return $this
      */
-    public function setAdKeywords($ad_keywords)
+    public function setAdKeywords(array $ad_keywords)
     {
         $this->params["ad_keywords"] = $ad_keywords;
         $this->ad_keywords = $ad_keywords;
