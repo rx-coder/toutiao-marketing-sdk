@@ -51,7 +51,7 @@ class CreativeUpdateStatus extends RpcRequest
      * @param mixed $creative_ids
      * @return $this
      */
-    public function setCreativeIds($creative_ids)
+    public function setCreativeIds(array $creative_ids)
     {
         $this->params["creative_ids"] = $creative_ids;
         $this->creative_ids = $creative_ids;
