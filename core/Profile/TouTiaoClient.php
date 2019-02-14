@@ -14,20 +14,20 @@ use core\Http\HttpRequest;
 
 class TouTiaoClient
 {
-    public $access_token;
+    public static $access_token;
 
-    public $server_url = 'https://ad.toutiao.com/open_api';
+    public static $server_url = 'https://ad.toutiao.com/open_api';
 
-    public $box_url = 'https://test-ad.toutiao.com/open_api';
+    public static $box_url = 'https://test-ad.toutiao.com/open_api';
 
-    public $is_sanbox = false;
+    public static $is_sanbox = false;
 
     public function __construct($access_token, $is_sanbox = false, $server_url = null, $box_url = null)
     {
-        $this->access_token = $access_token;
-        $this->is_sanbox = $is_sanbox;
-        if (null !== $server_url) $this->server_url = $server_url;
-        if (null !== $box_url) $this->box_url = $box_url;
+        static::$access_token = $access_token;
+        static::$is_sanbox = $is_sanbox;
+        if (null !== $server_url) static::$server_url = $server_url;
+        if (null !== $box_url) static::$box_url = $box_url;
     }
 
     /**
@@ -41,7 +41,7 @@ class TouTiaoClient
         $request->check();
         $params = $request->getParams();
         $headers = [
-            'Access-Token' => $this->access_token,
+            'Access-Token' => static::$access_token,
             'Content-Type' => $request->getContentType()
         ];
         if (null == $url) {
@@ -50,12 +50,17 @@ class TouTiaoClient
                 throw new InvalidParamException('Http url is required, and now url is \' \'');
             }
             if ("http" != substr($url, 0, 4)) {
-                $url = ($this->is_sanbox ? $this->box_url : $this->server_url) . $request->getUrl();
+                $url = (static::$is_sanbox ? static::$box_url : static::$server_url) . $request->getUrl();
             }
         }
         if (strpos($request->getContentType(), "json") > 0) {
             $params = json_encode($params);
         }
         return HttpRequest::curl($url, $request->getMethod(), $params, $headers);
+    }
+
+    public static function Report()
+    {
+        return new \Report\Module(new static(static::$access_token));
     }
 }
