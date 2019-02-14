@@ -63,4 +63,9 @@ class TouTiaoClient
     {
         return new \Report\Module(new static(static::$access_token));
     }
+
+    public static function AdvertisingDelivery()
+    {
+        return new \AdvertisingDelivery\Module(new static(static::$access_token));
+    }
 }
