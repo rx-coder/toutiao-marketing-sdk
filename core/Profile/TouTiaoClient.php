@@ -68,4 +68,9 @@ class TouTiaoClient
     {
         return new \AdvertisingDelivery\Module(new static(static::$access_token));
     }
+
+    public static function AdvertisingOriginality()
+    {
+        return new \AdvertisingOriginality\Module(new static(static::$access_token));
+    }
 }
