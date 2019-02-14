@@ -8,8 +8,8 @@
 
 namespace core\Profile;
 
-use AuthenticationOauth\V1\GetAccessToken;
-use AuthenticationOauth\V1\RefreshToken;
+use AuthenticationOauth\GetAccessToken;
+use AuthenticationOauth\RefreshToken;
 use core\Exception\TouTiaoException;
 use core\Http\HttpRequest;
 

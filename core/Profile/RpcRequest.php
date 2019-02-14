@@ -8,8 +8,15 @@
 
 namespace core\Profile;
 
+use core\Exception\TouTiaoException;
+
 class RpcRequest implements RequestInteface
 {
+    /**
+     * @var TouTiaoClient
+     */
+    private $client;
+
     /**
      * request url
      */
@@ -29,6 +36,15 @@ class RpcRequest implements RequestInteface
      * request header Content-Type
      */
     protected $content_type = 'application/json';
+
+    /**
+     * RpcRequest constructor.
+     * @param null $client
+     */
+    public function __construct($client = null)
+    {
+        $this->client = $client;
+    }
 
     public function setUrl($url)
     {
@@ -75,5 +91,17 @@ class RpcRequest implements RequestInteface
     public function check()
     {
         // TODO: Implement check() method.
+    }
+
+    /**
+     * @return \core\Http\HttpResponse
+     * @throws TouTiaoException
+     */
+    public function send()
+    {
+        if (!$this->client instanceof TouTiaoClient) {
+            throw new TouTiaoException('Request can not be send by null, TouTiaoClent`s instance should be set before send', 500);
+        }
+        return $this->client->excute($this);
     }
 }

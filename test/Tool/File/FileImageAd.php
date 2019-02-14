@@ -10,9 +10,9 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$file = __DIR__ . '/dzaxfr-1547714860.png';
+$file = __DIR__ . '/T.png';
 
-$req = new \Tool\File\V1\FileImageAd();
+$req = new \Tool\File\FileImageAd();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setImageFile($file);
 $req->setImageSignature(md5_file($file));

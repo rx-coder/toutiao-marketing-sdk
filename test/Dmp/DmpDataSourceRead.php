@@ -10,7 +10,7 @@ require __DIR__ . '/../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Dmp\V1\DmpDataSourceRead();
+$req = new \Dmp\DmpDataSourceRead();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setDataSourceIdList(['067d127009514acfb2eb7b2f022ab7f4']);
 

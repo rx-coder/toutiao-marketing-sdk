@@ -9,7 +9,7 @@ require __DIR__ . '/../../../index.php';
 require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
-$req = new \Tool\AdConvert\V1\ToolsAdvConvertSelect();
+$req = new \Tool\AdConvert\ToolsAdvConvertSelect();
 $req->setAdvertiserId(ADVERTISER_ID);
 
 print_r($client->excute($req));

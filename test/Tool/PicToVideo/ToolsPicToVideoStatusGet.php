@@ -9,7 +9,7 @@ require __DIR__ . '/../../../index.php';
 require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
-$req = new \Tool\PicToVideo\V1\ToolsPicToVideoStatusGet();
+$req = new \Tool\PicToVideo\ToolsPicToVideoStatusGet();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setVideoId('11');
 

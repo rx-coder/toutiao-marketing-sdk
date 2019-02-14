@@ -10,6 +10,6 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Tool\QueryTool\V1\DpaProductAvailables();
+$req = new \Tool\QueryTool\DpaProductAvailables();
 
 print_r($client->excute($req));

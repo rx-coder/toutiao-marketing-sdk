@@ -10,7 +10,7 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Tool\CreativeWord\V1\ToolsCreativeWordUpdate();
+$req = new \Tool\CreativeWord\ToolsCreativeWordUpdate();
 
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setCreativeWordId('8250');

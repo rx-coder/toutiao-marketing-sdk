@@ -11,7 +11,7 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Tool\AdConvert\V1\ToolsAdConvertCreate();
+$req = new \Tool\AdConvert\ToolsAdConvertCreate();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setName("测测测");
 $req->setConvertSourceType('AD_CONVERT_SOURCE_TYPE_JS');

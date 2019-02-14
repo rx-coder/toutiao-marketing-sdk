@@ -10,7 +10,7 @@ require __DIR__ . '/../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Dmp\V1\DmpDataSourceCreate();
+$req = new \Dmp\DmpDataSourceCreate();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setDataFormat(0);
 $req->setDataSourceName('测试');

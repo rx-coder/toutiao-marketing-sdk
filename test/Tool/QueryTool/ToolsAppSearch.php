@@ -10,7 +10,7 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Tool\QueryTool\V1\ToolsAppSearch();
+$req = new \Tool\QueryTool\ToolsAppSearch();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setAppName('头条');
 

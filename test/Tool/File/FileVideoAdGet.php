@@ -10,7 +10,7 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Tool\File\V1\FileVideoAdGet();
+$req = new \Tool\File\FileVideoAdGet();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setVideoIds(['v020331c0000bh96brhpjc2htdvag21g']);
 

@@ -10,7 +10,7 @@ require __DIR__ . '/../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Dmp\V1\DmpDataSourceFileUpload();
+$req = new \Dmp\DmpDataSourceFileUpload();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setFile(__DIR__ . '/test.zip');
 

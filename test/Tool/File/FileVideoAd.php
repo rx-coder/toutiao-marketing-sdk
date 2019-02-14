@@ -11,7 +11,7 @@ require __DIR__ . '/../../config.php';
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
 $file = __DIR__ . '/test.mp4';
-$req = new \Tool\File\V1\FileVideoAd();
+$req = new \Tool\File\FileVideoAd();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setVideoFile($file);
 $req->setVideoSignature(md5_file($file));

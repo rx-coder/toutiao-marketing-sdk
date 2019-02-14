@@ -10,7 +10,7 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Tool\QueryTool\V1\ToolsAdQualityGet();
+$req = new \Tool\QueryTool\ToolsAdQualityGet();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setAdIds(['100']);
 

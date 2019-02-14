@@ -10,7 +10,7 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Tool\AdConvert\V1\ToolsAdConvertPush();
+$req = new \Tool\AdConvert\ToolsAdConvertPush();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setConvertId(1624248653889560);
 $req->setTargetAdvertiserIds([162424865388]);

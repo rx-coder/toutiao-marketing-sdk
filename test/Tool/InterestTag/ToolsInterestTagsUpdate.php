@@ -11,7 +11,7 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Tool\InterestTag\V1\ToolsInterestTagsUpdate();
+$req = new \Tool\InterestTag\ToolsInterestTagsUpdate();
 
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setId(1624253825408027);

@@ -10,7 +10,7 @@ require __DIR__ . '/../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Dmp\V1\DmpCustomAudienceLookalike();
+$req = new \Dmp\DmpCustomAudienceLookalike();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setCustomAudienceId('110206880');
 $req->setLookalikeNum(110000);

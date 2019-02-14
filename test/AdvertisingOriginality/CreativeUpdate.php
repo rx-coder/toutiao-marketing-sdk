@@ -9,7 +9,7 @@ require __DIR__ . '/../../index.php';
 require __DIR__ . '/../config.php';
 $auth = new \core\Profile\ToutiaoAuth(APPID, SECRET);
 $client = $auth->makeClient(TOKEN);
-$req = new \AdvertisingOriginality\V1\CreativeUpdate();
+$req = new \AdvertisingOriginality\CreativeUpdate();
 $req->setAdvertiserId(ADVERTISER_ID)->setAdId('1625254884489223')
     ->setInventoryType(['INVENTORY_FEED'])
     ->setCreatives([["image_mode" => "CREATIVE_IMAGE_MODE_LARGE", "title" => "SDK尝试来来来",
