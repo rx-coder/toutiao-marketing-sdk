@@ -12,32 +12,32 @@ use core\Profile\BaseModule;
 
 class Module extends BaseModule
 {
-    public function CreativeCreate()
+    public function creativeCreate()
     {
         return new CreativeCreate($this->client);
     }
 
-    public function CreativeGet()
+    public function creativeGet()
     {
         return new CreativeGet($this->client);
     }
 
-    public function CreativeMaterialRead()
+    public function creativeMaterialRead()
     {
         return new CreativeMaterialRead($this->client);
     }
 
-    public function CreativeRead()
+    public function creativeRead()
     {
         return new CreativeRead($this->client);
     }
 
-    public function CreativeUpdate()
+    public function creativeUpdate()
     {
         return new CreativeUpdate($this->client);
     }
 
-    public function CreativeUpdateStatus()
+    public function creativeUpdateStatus()
     {
         return new CreativeUpdateStatus($this->client);
     }
