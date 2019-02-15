@@ -19,10 +19,16 @@ Tool/                          工具模块
 ## Example
 
 ```php
-require __DIR__ . '/../../index.php';
-require __DIR__ . '/../config.php';
-$auth = new \core\Profile\ToutiaoAuth(APPID, SECRET);
-$client = $auth->makeClient(TOKEN);
+// 获取token, refresh_token
+$auth = new ToutiaoSdk\ToutiaoAuth(APPID, SECRET);
+print_r($auth->getAccessToken(AUTH_CODE));
+
+// 刷新token
+print_r($auth->refreshToken(REFRESH_TOKEN));
+```
+
+```php
+$client = new ToutiaoSdk\TouTiaoClient(TOKEN);
 $req = $client::AdvertisingDelivery()->campaignGet()->setAdvertiserId(ADVERTISER_ID)->send();
 var_dump($req->getBody());
 ```
@@ -31,19 +37,19 @@ var_dump($req->getBody());
 
 广告组模块       |执行方式
   ------------- | -------------
- 获取广告组       |$client::AdvertisingDelivery()->campaignGet()->set->send| 
- 创建广告组       |$client::AdvertisingDelivery()->campaignCreate()->set->send | 
- 修改广告组       | $client::AdvertisingDelivery()->campaignUpdate()->set->send | 
- 广告组更新状态   | $client::AdvertisingDelivery()->campaignUpdateStatus()->set->send | 
+ 获取广告组       |$client::AdvertisingDelivery()->campaignGet()| 
+ 创建广告组       |$client::AdvertisingDelivery()->campaignCreate()| 
+ 修改广告组       | $client::AdvertisingDelivery()->campaignUpdate()| 
+ 广告组更新状态   | $client::AdvertisingDelivery()->campaignUpdateStatus()| 
 
 广告创意|执行方式 
  ------------- | -------------
- 获取创意列表| $client::AdvertisingOriginality()->CreativeGet()->set->send| 
- 创建广告创意|$client::AdvertisingOriginality()->CreativeCreate()->set->send | 
- 创意素材信息| $client::AdvertisingOriginality()->CreativeMaterialRead()->set->send | 
- 创意详细信息| $client::AdvertisingOriginality()->CreativeRead()->set->send | 
- 修改创意信息| $client::AdvertisingOriginality()->CreativeUpdate()->set->send | 
- 更新创意状态| $client::AdvertisingOriginality()->CreativeUpdateStatus()->set->send | 
+ 获取创意列表| $client::AdvertisingOriginality()->CreativeGet()| 
+ 创建广告创意|$client::AdvertisingOriginality()->CreativeCreate() | 
+ 创意素材信息| $client::AdvertisingOriginality()->CreativeMaterialRead() | 
+ 创意详细信息| $client::AdvertisingOriginality()->CreativeRead() | 
+ 修改创意信息| $client::AdvertisingOriginality()->CreativeUpdate() | 
+ 更新创意状态| $client::AdvertisingOriginality()->CreativeUpdateStatus()| 
 
 
 
