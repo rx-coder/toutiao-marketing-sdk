@@ -28,6 +28,7 @@ print_r($auth->refreshToken(REFRESH_TOKEN));
 ```
 
 ```php
+// 调用示例
 $client = new ToutiaoSdk\TouTiaoClient(TOKEN);
 $req = $client::AdvertisingDelivery()->campaignGet()->setAdvertiserId(ADVERTISER_ID)->send();
 var_dump($req->getBody());
