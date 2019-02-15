@@ -11,7 +11,7 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Tool\QueryTool\ToolsBidSuggest();
+$req = $client::Tool()->queryTool->bidSuggest();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setPricing('PRICING_CPC');
 

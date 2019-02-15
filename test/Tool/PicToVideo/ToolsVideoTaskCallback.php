@@ -11,3 +11,4 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
+$req = $client::Tool()->picToVideo->taskCallback();

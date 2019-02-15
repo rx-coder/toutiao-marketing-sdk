@@ -9,5 +9,5 @@ require __DIR__ . '/../../../index.php';
 require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
-$req = new \Tool\QueryTool\ToolsEstimateAudience();
+$req = $client::Tool()->queryTool->estimateAudience();
 print_r($client->excute($req));
