@@ -9,6 +9,5 @@ require __DIR__ . '/../../index.php';
 require __DIR__ . '/../config.php';
 $auth = new \core\Profile\ToutiaoAuth(APPID, SECRET);
 $client = $auth->makeClient(TOKEN);
-$req = new \AdvertisingPlan\AdGet();
-$req->setAdvertiserId('109089600186');
-var_dump($client->excute($req)->getBody());
+$req = $client::AdvertisingPlan()->AdGet()->setAdvertiserId('109089600186')->send();
+var_dump($req->getBody());
