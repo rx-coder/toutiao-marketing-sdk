@@ -56,7 +56,15 @@ var_dump($req->getBody());
  创意详细信息| $client::AdvertisingOriginality()->CreativeRead() | 
  修改创意信息| $client::AdvertisingOriginality()->CreativeUpdate() | 
  更新创意状态| $client::AdvertisingOriginality()->CreativeUpdateStatus()| 
-
+ 
+ 广告计划|执行方式 
+  ------------- | -------------
+  创建广告计划| $client::AdvertisingPlan()->AdCreate()| 
+  获取广告计划|$client::AdvertisingPlan()->AdGet() | 
+  修改广告计划| $client::AdvertisingPlan()->AdUpdate()| 
+  更新计划出价|  $client::AdvertisingPlan()->AdUpdateBid() | 
+  更新计划预算| $client::AdvertisingPlan()->AdUpdateBudget() | 
+  更新计划状态| $client::AdvertisingPlan()->AdUpdateStatus()| 
 
  数据报表|执行方式 
  ------------- | -------------
