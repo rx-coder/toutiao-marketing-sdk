@@ -78,4 +78,14 @@ class TouTiaoClient
     {
         return new \AdvertisingPlan\Module(new static(static::$access_token));
     }
+
+    public static function Dmp()
+    {
+        return new \Dmp\Module(new static(static::$access_token));
+    }
+
+    public static function Tool()
+    {
+        return new \Tool\Module(new static(static::$access_token));
+    }
 }
