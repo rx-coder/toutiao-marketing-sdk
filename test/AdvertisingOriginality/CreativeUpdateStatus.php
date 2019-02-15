@@ -9,8 +9,7 @@ require __DIR__ . '/../../index.php';
 require __DIR__ . '/../config.php';
 $auth = new \core\Profile\ToutiaoAuth(APPID, SECRET);
 $client = $auth->makeClient(TOKEN);
-$req = new \AdvertisingOriginality\CreativeUpdateStatus();
-$req->setAdvertiserId(ADVERTISER_ID)
+$req = $client::AdvertisingOriginality()->CreativeUpdateStatus()->setAdvertiserId(ADVERTISER_ID)
     ->setCreativeIds(['1625331325456445'])
-    ->setOptStatus('disable');
-var_dump($client->excute($req)->getBody());
+    ->setOptStatus('disable')->send();
+var_dump($req->getBody());
