@@ -5,6 +5,17 @@ namespace Tool;
 use core\Exception\TouTiaoException;
 use core\Profile\BaseModule;
 
+/**
+ * Class Module
+ * @package Tool
+ *
+ * @property \Tool\AdConvert\Module $adConvert
+ * @property  \Tool\CreativeWord\Module $creativeWord
+ * @property  \Tool\File\Module $file
+ * @property  \Tool\InterestTag\Module $interestTag
+ * @property  \Tool\PicToVideo\Module $picToVideo
+ * @property  \Tool\QueryTool\Module $queryTool
+ */
 class Module extends BaseModule
 {
     private $providers = [

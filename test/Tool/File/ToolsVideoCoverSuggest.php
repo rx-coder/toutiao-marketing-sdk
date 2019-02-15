@@ -10,7 +10,7 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Tool\File\ToolsVideoCoverSuggest();
+$req = $client::Tool()->file->videoCoverSuggest();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setVideoId('v020331c0000bh96brhpjc2htdvag21g');
 print_r($client->excute($req));

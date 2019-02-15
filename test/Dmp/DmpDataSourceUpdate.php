@@ -10,7 +10,7 @@ require __DIR__ . '/../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Dmp\DmpDataSourceUpdate();
+$req = $client::Dmp()->dataSourceUpdate();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setDataSourceId('067d127009514acfb2eb7b2f022ab7f4');
 $req->setFileStorageType(0);

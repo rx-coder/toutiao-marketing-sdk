@@ -10,7 +10,7 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Tool\CreativeWord\ToolsCreativeWordDelete();
+$req = $client::Tool()->creativeWord->delete();
 
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setCreativeWordId(8248);

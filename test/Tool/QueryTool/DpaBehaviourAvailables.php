@@ -10,7 +10,7 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Tool\QueryTool\DpaBehaviourAvailables();
+$req = $client::Tool()->queryTool->dpaBehaviourAvailables();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setPlatformId(1001);
 

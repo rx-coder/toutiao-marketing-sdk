@@ -10,7 +10,7 @@ require __DIR__ . '/../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Dmp\DmpCustomAudienceDelete();
+$req = $client::Dmp()->customAudienceDelete();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setCustomAudienceId('110206648');
 

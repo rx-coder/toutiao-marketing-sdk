@@ -10,7 +10,7 @@ require __DIR__.'/../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Report\ReportAudienceTag();
+$req = $client::Report()->audienceTag();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setStartDate('2019-01-29');
 $req->setEndDate('2019-01-29');

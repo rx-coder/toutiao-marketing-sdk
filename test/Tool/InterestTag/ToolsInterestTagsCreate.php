@@ -10,7 +10,7 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Tool\InterestTag\ToolsInterestTagsCreate();
+$req = $client::Tool()->interestTag->create();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setName("测试测试");
 $req->setWords(['我', '测测']);

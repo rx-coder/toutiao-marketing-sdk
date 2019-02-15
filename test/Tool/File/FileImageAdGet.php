@@ -11,7 +11,7 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Tool\File\FileImageAdGet();
+$req = $client::Tool()->file->imageAdGet();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setImageIds(['web.business.image/201901315d0d9323af335d944065b39c']);
 

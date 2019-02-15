@@ -9,7 +9,7 @@ require __DIR__ . '/../../../index.php';
 require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
-$req = new \Tool\AdConvert\ToolsAdConvertSelect();
+$req = $client::Tool()->adConvert->select();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setPackageName('sdwe');
 

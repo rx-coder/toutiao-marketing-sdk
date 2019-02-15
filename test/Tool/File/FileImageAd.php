@@ -12,7 +12,7 @@ $client = new \core\Profile\TouTiaoClient(TOKEN);
 
 $file = __DIR__ . '/T.png';
 
-$req = new \Tool\File\FileImageAd();
+$req = $client::Tool()->file->imageAd();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setImageFile($file);
 $req->setImageSignature(md5_file($file));

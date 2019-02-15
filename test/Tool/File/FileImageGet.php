@@ -10,7 +10,7 @@ require __DIR__ . '/../../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Tool\File\FileImageGet();
+$req = $client::Tool()->file->imageGet();
 
 $req->setAdvertiserId(ADVERTISER_ID);
 

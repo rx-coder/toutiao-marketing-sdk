@@ -11,7 +11,7 @@ require __DIR__ . '/../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
 
-$req = new \Dmp\DmpCustomAudienceRule();
+$req = $client::Dmp()->customAudienceRule();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setTag('sdfwe');
 $req->setName('测测测恶');

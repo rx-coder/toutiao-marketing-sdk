@@ -9,7 +9,7 @@ require __DIR__ . '/../../index.php';
 require __DIR__ . '/../config.php';
 
 $client = new \core\Profile\TouTiaoClient(TOKEN);
-$req = new \Dmp\DmpCustomAudienceRead();
+$req = $client::Dmp()->customAudienceRead();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setCustomAudienceIds([110206764]);
 print_r($client->excute($req));
