@@ -6,7 +6,7 @@
  * Time: 12:28
  */
 
-namespace core\Profile;
+namespace ToutiaoSdk;
 
 use AuthenticationOauth\GetAccessToken;
 use AuthenticationOauth\RefreshToken;
