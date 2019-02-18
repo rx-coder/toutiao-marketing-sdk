@@ -6,11 +6,12 @@
  * Time: 16:29
  */
 
-namespace core\Profile;
+namespace ToutiaoSdk;
 
 use core\Exception\InvalidParamException;
 use core\Exception\TouTiaoException;
 use core\Http\HttpRequest;
+use core\Profile\RequestInteface;
 
 class TouTiaoClient
 {

@@ -7,7 +7,7 @@
  */
 require __DIR__ . '/../../index.php';
 require __DIR__ . '/../config.php';
-$auth = new \core\Profile\ToutiaoAuth(APPID, SECRET);
+$auth = new ToutiaoSdk\ToutiaoAuth(APPID, SECRET);
 $client = $auth->makeClient(TOKEN);
 $req = $client::AdvertisingDelivery()->campaignUpdateStatus()
     ->setAdvertiserId(ADVERTISER_ID)->setCampaignIds(['1625434727234573', '1625437495707716'])

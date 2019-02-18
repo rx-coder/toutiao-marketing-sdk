@@ -7,7 +7,7 @@
  */
 require __DIR__ . '/../../index.php';
 require __DIR__ . '/../config.php';
-$auth = new \core\Profile\ToutiaoAuth(APPID, SECRET);
+$auth = new ToutiaoSdk\ToutiaoAuth(APPID, SECRET);
 $client = $auth->makeClient(TOKEN);
 $req = $client::AdvertisingOriginality()->CreativeCreate()->setAdvertiserId(ADVERTISER_ID)->setAdId('1625254884489223')
     ->setInventoryType(['INVENTORY_FEED'])->setAdKeywords(['加油吧少年'])->setThirdIndustryId('19140604')
