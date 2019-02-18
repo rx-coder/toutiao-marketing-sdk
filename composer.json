@@ -1,20 +1,28 @@
 {
   "name": "rexueyouxi/toutiao-marketing-sdk",
   "description": "头条 MarketingApi SDK",
-  "keywords": ["头条", "marketing-api", "sdk"],
+  "keywords": [
+    "头条",
+    "marketing-api",
+    "sdk"
+  ],
   "type": "library",
   "license": "MIT",
   "authors": [
     {
       "name": "sumyf",
       "email": "szh834750391@163.com"
+    },
+    {
+      "name": "zhangwenzong",
+      "email": "zhang5207892@163.com"
     }
   ],
   "require": {
     "php": ">=5.6.0"
   },
   "autoload": {
-    "psr-4":{
+    "psr-4": {
       "ToutiaoSdk\\": "core/Profile/"
     }
   }
