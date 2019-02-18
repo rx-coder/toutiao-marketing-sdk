@@ -23,7 +23,14 @@
   },
   "autoload": {
     "psr-4": {
-      "ToutiaoSdk\\": "core/Profile/"
+      "ToutiaoSdk\\": "core/Profile/",
+      "Report\\": "Report/",
+      "Dmp\\": "Dmp/",
+      "AdvertisingDelivery\\": "AdvertisingDelivery/",
+      "AdvertisingOriginality\\": "AdvertisingOriginality/",
+      "AdvertisingPlan\\": "AdvertisingPlan/",
+      "AuthenticationOauth\\": "AuthenticationOauth/",
+      "Tool\\": "Tool/"
     }
   }
 }
