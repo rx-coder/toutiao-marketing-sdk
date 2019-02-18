@@ -1,13 +1,19 @@
 # toutiao-marketing-sdk
 - 今日头条MARKETING API SDK
 
+## Installation
+
+```
+composer require rx-coder/toutiao-marketing-sdk 
+```
+
 ## Api Doc 
 
 - https://ad.toutiao.com/openapi/doc/index.html?id=30
 
 ## Requirements
 
-- PHP 7.0+
+- PHP 5.6 +
 
 ## Directory Structure
 ```
