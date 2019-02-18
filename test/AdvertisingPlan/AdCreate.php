@@ -7,7 +7,7 @@
  */
 require __DIR__ . '/../../index.php';
 require __DIR__ . '/../config.php';
-$auth = new \core\Profile\ToutiaoAuth(APPID, SECRET);
+$auth = new ToutiaoSdk\ToutiaoAuth(APPID, SECRET);
 $client = $auth->makeClient(TOKEN);
 $req = $client::AdvertisingPlan()->AdCreate()->setAdvertiserId(ADVERTISER_ID)->setCampaignId('1623961859341342')
     ->setBudgetMode('BUDGET_MODE_DAY')->setStartTime('2019-01-30 00:00')

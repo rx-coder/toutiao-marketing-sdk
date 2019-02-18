@@ -8,7 +8,7 @@
 require __DIR__ . '/../../../index.php';
 require __DIR__ . '/../../config.php';
 
-$client = new \core\Profile\TouTiaoClient(TOKEN);
+$client = new ToutiaoSdk\TouTiaoClient(TOKEN);
 $req = $client::Tool()->queryTool->industryGet();
 $req->setLevel(2);
 print_r($client->excute($req));

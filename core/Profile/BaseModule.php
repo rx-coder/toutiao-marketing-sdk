@@ -2,11 +2,10 @@
 
 namespace core\Profile;
 
+use ToutiaoSdk\TouTiaoClient;
+
 class BaseModule
 {
-    /**
-     * @var TouTiaoClient
-     */
     protected $client;
 
     public function __construct(TouTiaoClient $client)
