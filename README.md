@@ -4,7 +4,7 @@
 ## Installation
 
 ```
-composer require rx-coder/toutiao-marketing-sdk 
+composer require rx-coder/toutiao-marketing-sdk:*
 ```
 
 ## Api Doc 
