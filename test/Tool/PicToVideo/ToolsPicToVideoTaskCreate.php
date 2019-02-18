@@ -9,7 +9,7 @@
 require __DIR__ . '/../../../index.php';
 require __DIR__ . '/../../config.php';
 
-$client = new \core\Profile\TouTiaoClient(TOKEN);
+$client = new ToutiaoSdk\TouTiaoClient(TOKEN);
 $req = $client::Tool()->picToVideo->taskCreate();
 $req->setAdvertiserId(ADVERTISER_ID);
 $req->setTemplateType('images_vertical');

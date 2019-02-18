@@ -14,6 +14,10 @@ class Autoloader
         'core/Autoloader', 'core/Http', 'core/Regions', 'core/Profile', 'core/Exception'
     );
 
+    private static $replacePath = array(
+        "ToutiaoSdk\\" => "\\core\\Profile\\"
+    );
+
     /**
      *
      * @param $className
@@ -22,7 +26,7 @@ class Autoloader
     {
         $directories = dirname(dirname(__DIR__));
         foreach (self::$autoloadPathArray as $path) {
-            $file = $directories . DIRECTORY_SEPARATOR . $path  . '.php';
+            $file = $directories . DIRECTORY_SEPARATOR . $path . '.php';
             $file = str_replace('\\', DIRECTORY_SEPARATOR, $file);
             if (is_file($file)) {
                 include_once $file;
@@ -30,7 +34,10 @@ class Autoloader
             }
 
         }
-        $file = $directories.DIRECTORY_SEPARATOR.$className.'.php';
+        foreach (self::$replacePath as $searchStr => $replaceStr) {
+            $className = str_replace($searchStr, $replaceStr, $className);
+        }
+        $file = $directories . DIRECTORY_SEPARATOR . $className . '.php';
         $file = str_replace('\\', DIRECTORY_SEPARATOR, $file);
         if (is_file($file)) {
             include_once $file;
