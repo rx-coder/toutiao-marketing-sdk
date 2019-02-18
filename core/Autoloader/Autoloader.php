@@ -11,7 +11,7 @@ namespace core\Autoloader;
 class Autoloader
 {
     private static $autoloadPathArray = array(
-        'core', 'core/Autoloader', 'core/Http', 'core/Regions', 'core/Profile', 'core/Exception'
+        'core/Autoloader', 'core/Http', 'core/Regions', 'core/Profile', 'core/Exception'
     );
 
     /**
@@ -22,15 +22,19 @@ class Autoloader
     {
         $directories = dirname(dirname(__DIR__));
         foreach (self::$autoloadPathArray as $path) {
-            $file = $directories . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . $className . '.php';
-            if (strpos($className, 'core') !== true) {
-                $file = $directories . DIRECTORY_SEPARATOR . $className . '.php';
-            }
+            $file = $directories . DIRECTORY_SEPARATOR . $path  . '.php';
             $file = str_replace('\\', DIRECTORY_SEPARATOR, $file);
             if (is_file($file)) {
                 include_once $file;
                 break;
             }
+
+        }
+        $file = $directories.DIRECTORY_SEPARATOR.$className.'.php';
+        $file = str_replace('\\', DIRECTORY_SEPARATOR, $file);
+        if (is_file($file)) {
+            include_once $file;
+
         }
     }
 
