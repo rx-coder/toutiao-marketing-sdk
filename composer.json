@@ -24,6 +24,7 @@
   "autoload": {
     "psr-4": {
       "ToutiaoSdk\\": "core/Profile/",
+      "core\\": "core/",
       "Report\\": "Report/",
       "Dmp\\": "Dmp/",
       "AdvertisingDelivery\\": "AdvertisingDelivery/",
