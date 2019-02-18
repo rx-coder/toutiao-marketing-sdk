@@ -9,6 +9,7 @@
 namespace core\Profile;
 
 use core\Exception\TouTiaoException;
+use ToutiaoSdk\TouTiaoClient;
 
 class RpcRequest implements RequestInteface
 {
