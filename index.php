@@ -9,5 +9,4 @@
 use  core\Autoloader\Autoloader;
 
 require_once __DIR__ . '/core/Autoloader/Autoloader.php';
-define('ENABLE_HTTP_PROXY', false);
 Autoloader::loadDirectories();

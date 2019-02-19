@@ -12,6 +12,7 @@ use AuthenticationOauth\GetAccessToken;
 use AuthenticationOauth\RefreshToken;
 use core\Exception\TouTiaoException;
 use core\Http\HttpRequest;
+use core\Profile\RequestInteface;
 
 class ToutiaoAuth
 {
