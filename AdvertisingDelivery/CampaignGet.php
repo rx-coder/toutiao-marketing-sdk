@@ -117,7 +117,7 @@ class CampaignGet extends RpcRequest
 
     public function setIds(array $value)
     {
-        $this->params['ids'] = $value;
+        $this->params['filtering']['ids'] = $value;
         $this->ids = $value;
         return $this;
     }
@@ -129,7 +129,7 @@ class CampaignGet extends RpcRequest
 
     public function setCampaignName($value)
     {
-        $this->params['campaign_name'] = $value;
+        $this->params['filtering']['campaign_name'] = $value;
         $this->campaign_name = $value;
         return $this;
     }
@@ -141,7 +141,7 @@ class CampaignGet extends RpcRequest
 
     public function setLandingType($value)
     {
-        $this->params['landing_type'] = $value;
+        $this->params['filtering']['landing_type'] = $value;
         $this->landing_type = $value;
         return $this;
     }
@@ -153,7 +153,7 @@ class CampaignGet extends RpcRequest
 
     public function setStatus($value)
     {
-        $this->params['status'] = $value;
+        $this->params['filtering']['status'] = $value;
         $this->status = $value;
         return $this;
     }
