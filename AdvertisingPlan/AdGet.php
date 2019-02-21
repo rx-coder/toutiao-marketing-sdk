@@ -26,26 +26,26 @@ class AdGet extends RpcRequest
     /**
      * 广告主ID
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * (可选)
      * 页数 默认值: 1
      */
-    private $page;
+    protected $page;
 
     /**
      * (可选)
      * 页面大小 默认值: 10
      */
-    private $page_size;
+    protected $page_size;
 
     /**
      * (可选)
      * 过滤条件，若此字段不传，或传空则视为无限制条件
      * json
      */
-    private $filtering = [];
+    protected $filtering = [];
 
     /**
      * (可选)
@@ -53,7 +53,7 @@ class AdGet extends RpcRequest
      * 按广告计划ID过滤
      * 数组
      */
-    private $ids;
+    protected $ids;
 
     /**
      * (可选)
@@ -61,7 +61,7 @@ class AdGet extends RpcRequest
      * 按广告计划名称过滤
      * 支持模糊搜索
      */
-    private $ad_name;
+    protected $ad_name;
 
     /**
      * (可选)
@@ -69,7 +69,7 @@ class AdGet extends RpcRequest
      * 按出价方式过滤
      * 数组
      */
-    private $pricing_list;
+    protected $pricing_list;
 
     /**
      * (可选)
@@ -77,14 +77,14 @@ class AdGet extends RpcRequest
      * 按计划状态过滤
      * 默认为返回“所有不包含已删除”，如果要返回所有包含已删除有对应枚举表示
      */
-    private $status;
+    protected $status;
 
     /**
      * (可选)
      * 【过滤条件】
      * 按广告组id过滤
      */
-    private $campaign_id;
+    protected $campaign_id;
 
     /**
      * (可选)
@@ -97,7 +97,7 @@ class AdGet extends RpcRequest
      * "retargeting_tags","convert_id", "interest_tags", "hide_if_converted"
      *
      */
-    private $fields = [];
+    protected $fields = [];
 
     /**
      * @param mixed $advertiser_id

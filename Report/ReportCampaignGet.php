@@ -22,27 +22,27 @@ class ReportCampaignGet extends RpcRequest
     /**
      * 广告主ID
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 起始日期,格式YYYY-MM-DD,只支持查询2016-10-26及以后的日期
      */
-    private $start_date;
+    protected $start_date;
 
     /**
      * 结束日期,格式YYYY-MM-DD,只支持查询2016-10-26及以后的日期
      */
-    private $end_date;
+    protected $end_date;
 
     /**
      * 搜索页码 默认值: 1
      */
-    private $page;
+    protected $page;
 
     /**
      * 一页展示的数据数量 默认值: 20
      */
-    private $page_size;
+    protected $page_size;
 
     /**
      * 分组条件，默认为STAT_GROUP_BY_FIELD_STAT_TIME "STAT_GROUP_BY_FIELD_STAT_TIME"表示按时间分组,"STAT_GROUP_BY_FIELD_ID"表示按id分组
@@ -52,19 +52,19 @@ class ReportCampaignGet extends RpcRequest
      * ②group_by=["STAT_GROUP_BY_FIELD_ID"]表示按照id聚合，本次返回最多返回m条数据，即将n天的数据按照m个id各自累加。‍
      * ③group_by=["STAT_GROUP_BY_FIELD_ID", "STAT_GROUP_BY_FIELD_STAT_TIME"]表示按照时间和id同时聚合，最多返回m * n个数据，返回数据中会同时存在id和时间
      */
-    private $group_by;
+    protected $group_by;
 
     /**
      * 时间粒度, 当分组为"STAT_GROUP_BY_FIELD_ID"无效。 "STAT_TIME_GRANULARITY_DAILY"表示天, "STAT_TIME_GRANULARITY_HOURLY"表示小时
      * 默认值: STAT_TIME_GRANULARITY_DAILY
      * 允许值: "STAT_TIME_GRANULARITY_DAILY","STAT_TIME_GRANULARITY_HOURLY"
      */
-    private $time_granularity;
+    protected $time_granularity;
 
     /**
      * 过滤字段，json格式，如果campaign_ids不填默认按照广告主过滤，支持字段如下
      */
-    private $filtering = [];
+    protected $filtering = [];
 
     /**
      * @return mixed

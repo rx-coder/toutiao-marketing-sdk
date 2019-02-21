@@ -22,13 +22,13 @@ class ToolsVideoCoverSuggest extends RpcRequest
      * 广告主ID
      * @var string $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 视频id
      * @var string $video_id
      */
-    private $video_id;
+    protected $video_id;
 
     /**
      * @return string

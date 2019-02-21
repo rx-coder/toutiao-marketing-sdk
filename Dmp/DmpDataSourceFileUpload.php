@@ -22,19 +22,19 @@ class DmpDataSourceFileUpload extends RpcRequest
      * 广告主ID
      * @var integer $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 文件
      * @var string $file
      */
-    private $file;
+    protected $file;
 
     /**
      * 文件MD5
      * @var string $file_signature
      */
-    private $file_signature;
+    protected $file_signature;
 
     /**
      * @return int

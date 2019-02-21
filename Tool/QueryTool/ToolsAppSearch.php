@@ -22,13 +22,13 @@ class ToolsAppSearch extends RpcRequest
      * 广告主ID
      * @var string $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 搜索关键字
      * @var string $app_name
      */
-    private $app_name;
+    protected $app_name;
 
     /**
      * @return string

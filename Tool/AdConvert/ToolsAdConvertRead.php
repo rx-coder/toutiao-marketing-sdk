@@ -22,13 +22,13 @@ class ToolsAdConvertRead extends RpcRequest
      * 操作的广告主id
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 转化id
      * @var int $convert_id
      */
-    private $convert_id;
+    protected $convert_id;
 
     /**
      * @return int

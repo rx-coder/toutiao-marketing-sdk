@@ -21,34 +21,34 @@ class ReportAudienceTag extends RpcRequest
     /**
      * 广告主ID
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 起始日期,格式YYYY-MM-DD,只支持查询2016-10-26及以后的日期
      */
-    private $start_date;
+    protected $start_date;
 
     /**
      * 结束日期,格式YYYY-MM-DD,只支持查询2016-10-26及以后的日期
      */
-    private $end_date;
+    protected $end_date;
 
     /**
      * 欲查询的指标的类型。"AUDIENCE_STAT_ID_TYPE_ADVERTISER"表示按广告主,"AUDIENCE_STAT_ID_TYPE_CAMPAIGN"表示按广告组, "AUDIENCE_STAT_ID_TYPE_AD"表示按广告计划
      * 允许值: "AUDIENCE_STAT_ID_TYPE_ADVERTISER","AUDIENCE_STAT_ID_TYPE_CAMPAIGN", "AUDIENCE_STAT_ID_TYPE_AD"
      */
-    private $id_type;
+    protected $id_type;
 
     /**
      * 欲查询的id列表,最多添加100个id。id_type为广告主，选填。其他类型，必填。
      */
-    private $ids;
+    protected $ids;
 
     /**
      * 查询指标列表
      * 允许值: "cost", "show", "click", "download_finish", "convert"
      */
-    private $metrics;
+    protected $metrics;
 
     /**
      * @return mixed

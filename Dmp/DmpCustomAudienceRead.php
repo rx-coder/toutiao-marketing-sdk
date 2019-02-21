@@ -22,13 +22,13 @@ class DmpCustomAudienceRead extends RpcRequest
      * 广告主ID
      * @var  int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 人群包ID列表 长度取值范围: 1-100
      * @var array $custom_audience_ids
      */
-    private $custom_audience_ids;
+    protected $custom_audience_ids;
 
     /**
      * @return int

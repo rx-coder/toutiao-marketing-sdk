@@ -22,13 +22,13 @@ class ToolsCreativeWordDelete extends RpcRequest
      * 广告主ID
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 创意词包ID
      * @var int $creative_word_id
      */
-    private $creative_word_id;
+    protected $creative_word_id;
 
     /**
      * @return int

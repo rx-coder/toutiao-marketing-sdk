@@ -21,7 +21,7 @@ class ToolsIndustryGet extends RpcRequest
      * 只获取某级别数据，1:第一级,2:第二级,3:第三级，默认都返回
      * @var int $level
      */
-    private $level;
+    protected $level;
 
     /**
      * @return int

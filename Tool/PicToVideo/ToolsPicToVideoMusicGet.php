@@ -22,7 +22,7 @@ class ToolsPicToVideoMusicGet extends RpcRequest
      * 操作的广告主id
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * @return int

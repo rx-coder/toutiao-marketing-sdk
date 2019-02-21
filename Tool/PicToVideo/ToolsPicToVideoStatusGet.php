@@ -22,13 +22,13 @@ class ToolsPicToVideoStatusGet extends RpcRequest
      * 操作的广告主id
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 视频ID
      * @var string $video_id
      */
-    private $video_id;
+    protected $video_id;
 
     /**
      * @return int

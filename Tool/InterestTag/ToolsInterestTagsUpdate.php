@@ -22,25 +22,25 @@ class ToolsInterestTagsUpdate extends RpcRequest
      * 广告主id
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 兴趣词包id
      * @var int $id
      */
-    private $id;
+    protected $id;
 
     /**
      * 兴趣词包名称
      * @var string $name
      */
-    private $name;
+    protected $name;
 
     /**
      * 兴趣词包具体内容
      * @var array $words
      */
-    private $words;
+    protected $words;
 
     /**
      * @return int

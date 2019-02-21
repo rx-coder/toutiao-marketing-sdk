@@ -22,13 +22,13 @@ class ToolsAdQualityGet extends RpcRequest
      * 广告主id
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 查询广告质量度
      * @var array $ad_ids
      */
-    private $ad_ids;
+    protected $ad_ids;
 
     /**
      * @return int

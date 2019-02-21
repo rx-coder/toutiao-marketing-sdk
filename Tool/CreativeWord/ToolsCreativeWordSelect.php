@@ -22,13 +22,13 @@ class ToolsCreativeWordSelect extends RpcRequest
      * 广告主ID
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 创意词包id列表，如不填默认返回所有创意词包
      * @var array $creative_word_ids
      */
-    private $creative_word_ids;
+    protected $creative_word_ids;
 
     /**
      * @return int

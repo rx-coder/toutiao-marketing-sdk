@@ -22,25 +22,25 @@ class ToolsCreativeWordCreate extends RpcRequest
      * 广告主ID
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 创意词包名称
      * @var string $name
      */
-    private $name;
+    protected $name;
 
     /**
      * 默认词
      * @var string $default_word
      */
-    private $default_word;
+    protected $default_word;
 
     /**
      * 替换词
      * @var array $words
      */
-    private $words;
+    protected $words;
 
     /**
      * @return int

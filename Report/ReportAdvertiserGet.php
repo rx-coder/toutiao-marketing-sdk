@@ -22,34 +22,34 @@ class ReportAdvertiserGet extends RpcRequest
     /**
      * 广告主ID
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 起始日期,格式YYYY-MM-DD,只支持查询2016-10-26及以后的日期
      */
-    private $start_date;
+    protected $start_date;
 
     /**
      * 结束日期,格式YYYY-MM-DD,只支持查询2016-10-26及以后的日期
      */
-    private $end_date;
+    protected $end_date;
 
     /**
      * 搜索页码, 默认值为1
      */
-    private $page;
+    protected $page;
 
     /**
      * 一页展示的数据数量
      */
-    private $page_size;
+    protected $page_size;
 
     /**
      * 时间粒度 "STAT_TIME_GRANULARITY_DAILY"表示天, "STAT_TIME_GRANULARITY_HOURLY"表示小时
      * 默认值: STAT_TIME_GRANULARITY_DAILY
      * 允许值: "STAT_TIME_GRANULARITY_DAILY","STAT_TIME_GRANULARITY_HOURLY"
      */
-    private $time_granularity;
+    protected $time_granularity;
 
     /**
      * @return mixed

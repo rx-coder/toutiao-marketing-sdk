@@ -16,7 +16,7 @@ class RpcRequest implements RequestInteface
     /**
      * @var TouTiaoClient
      */
-    private $client;
+    protected $client;
 
     /**
      * request url

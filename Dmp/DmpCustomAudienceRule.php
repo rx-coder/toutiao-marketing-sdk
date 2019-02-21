@@ -22,32 +22,32 @@ class DmpCustomAudienceRule extends RpcRequest
      * 广告主ID
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 人群包标签 字符串长度取值范围: 1..20
      * @var string $tag
      */
-    private $tag;
+    protected $tag;
 
     /**
      * 人群包名称
      * 字符串长度取值范围: 1..20
      * @var string $name
      */
-    private $name;
+    protected $name;
 
     /**
      * DMP规则类型，详见【附录-DMP规则类型】
      * @var string $profile_type
      */
-    private $profile_type;
+    protected $profile_type;
 
     /**
      * DMP规则描述，数组
      * @var array $profiles
      */
-    private $profiles;
+    protected $profiles;
 
     /**
      * @return int

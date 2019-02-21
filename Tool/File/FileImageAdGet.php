@@ -22,13 +22,13 @@ class FileImageAdGet extends RpcRequest
      * 广告主ID
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 图片ids
      * @var array $image_ids
      */
-    private $image_ids;
+    protected $image_ids;
 
     /**
      * @return int

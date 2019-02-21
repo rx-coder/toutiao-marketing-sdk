@@ -23,18 +23,18 @@ class CreativeUpdateStatus extends RpcRequest
     /**
      * 广告主ID
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 创意ID集合
      */
-    private $creative_ids;
+    protected $creative_ids;
 
     /**
      * 操作, "enable"表示启用, "disable"表示暂停
      * 允许值: "enable", "disable"
      */
-    private $opt_status;
+    protected $opt_status;
 
     /**
      * @param mixed $advertiser_id
