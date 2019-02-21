@@ -22,34 +22,34 @@ class DmpCustomAudienceLookalike extends RpcRequest
      * 广告主ID
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 目标人群包ID（从哪个人群包进行扩展，目标人群包不能是扩展人群包）
      * @var int $custom_audience_id
      */
-    private $custom_audience_id;
+    protected $custom_audience_id;
 
     /**
      * 人群包标签，即人群分组，您可以自定义，用于给拓展后的人群包打标签便于您分类管理。
      * 字符串长度取值范围: 1..20
      * @var string $tag
      */
-    private $tag;
+    protected $tag;
 
     /**
      * 人群包名称
      * 字符串长度取值范围: 1..20
      * @var string $name
      */
-    private $name;
+    protected $name;
 
     /**
      * 扩展数量
      * 取值范围: 1-10000000
      * @var int $lookalike_num
      */
-    private $lookalike_num;
+    protected $lookalike_num;
 
     /**
      * 扩展设备，NONE为不限
@@ -57,7 +57,7 @@ class DmpCustomAudienceLookalike extends RpcRequest
      * 允许值: "NONE", "IOS", "ANDROID"
      * @var string $platform
      */
-    private $platform;
+    protected $platform;
 
     /**
      * @return int

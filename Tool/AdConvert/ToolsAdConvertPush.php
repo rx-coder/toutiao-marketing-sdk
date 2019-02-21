@@ -22,19 +22,19 @@ class ToolsAdConvertPush extends RpcRequest
      * 操作的广告主id
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 转化id
      * @var int $convert_id
      */
-    private $convert_id;
+    protected $convert_id;
 
     /**
      * 推送的广告主ID列表
      * @var array $target_advertiser_ids
      */
-    private $target_advertiser_ids;
+    protected $target_advertiser_ids;
 
     /**
      * @return int

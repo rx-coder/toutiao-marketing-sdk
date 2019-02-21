@@ -22,31 +22,31 @@ class ToolsAdvConvertSelect extends RpcRequest
      * 操作的广告主id
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 需要查询的convert_ids，如不填写默认返回所有的转化ID
      * @var array $convert_ids
      */
-    private $convert_ids;
+    protected $convert_ids;
 
     /**
      * 操作状态
      * @var string $opt_status
      */
-    private $opt_status;
+    protected $opt_status;
 
     /**
      * 页数 默认值： 1
      * @var int $page
      */
-    private $page;
+    protected $page;
 
     /**
      * 页面大小 默认值： 10
      * @var int $page_size
      */
-    private $page_size;
+    protected $page_size;
 
     /**
      * @return int

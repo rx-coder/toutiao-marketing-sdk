@@ -22,13 +22,13 @@ class DmpCustomAudiencePublish extends RpcRequest
      * 人群包所属广告主ID
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 人群包ID
      * @var int $custom_audience_id
      */
-    private $custom_audience_id;
+    protected $custom_audience_id;
 
     /**
      * @return int

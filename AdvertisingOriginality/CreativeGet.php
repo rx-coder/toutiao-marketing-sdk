@@ -26,71 +26,71 @@ class CreativeGet extends RpcRequest
     /**
      * 广告主ID
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 页数(可选)
      */
-    private $page;
+    protected $page;
 
     /**
      * 页面大小(可选)
      */
-    private $page_size;
+    protected $page_size;
 
     /**
      * 过滤条件 (可选)
      * 若此字段不传，或传空则视为无限制条件，查看账号总创意。
      */
-    private $filtering;
+    protected $filtering;
 
     /**
      * (可选)
      * 【过滤条件】按照campaign_id过滤
      */
-    private $campaign_id;
+    protected $campaign_id;
 
     /**
      * (可选)
      * 【过滤条件】按照ad_id过滤
      */
-    private $ad_id;
+    protected $ad_id;
 
     /**
      * (可选)
      * 【过滤条件】按照creative_id过滤
      */
-    private $creative_ids;
+    protected $creative_ids;
 
     /**
      * (可选)
      * 【过滤条件】按照creative_title过滤，支持模糊搜索
      */
-    private $creative_title;
+    protected $creative_title;
 
     /**
      * (可选)
      * 【过滤条件】按照广告组推广目的过滤
      */
-    private $landing_type;
+    protected $landing_type;
 
     /**
      * (可选)
      * 【过滤条件】按照ad出价方式过滤
      */
-    private $pricing;
+    protected $pricing;
 
     /**
      * (可选)
      * 【过滤条件】按照创意状态过滤，默认为返回“所有不包含已删除”，如果要返回所有包含已删除有对应枚举表示，详见【附录-广告创意状态】
      */
-    private $status;
+    protected $status;
 
     /**
      * (可选)
      * 【过滤条件】按照创意素材类型过滤
      */
-    private $image_mode;
+    protected $image_mode;
 
     /**
      * (可选)
@@ -99,7 +99,7 @@ class CreativeGet extends RpcRequest
      * "image_mode", "title", "creative_word_ids","third_party_id", "image_ids",
      * "image_id", "video_id","audit_reject_reason", "materials"
      */
-    private $fields;
+    protected $fields;
 
     /**
      * @param mixed $advertiser_id

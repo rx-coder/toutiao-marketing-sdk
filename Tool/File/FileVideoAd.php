@@ -22,19 +22,19 @@ class FileVideoAd extends RpcRequest
      * 广告主ID
      * @var string $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 视频的md5(用于服务端校验)
      * @var string $video_signature
      */
-    private $video_signature;
+    protected $video_signature;
 
     /**
      * 视频文件,格式mp4、mpeg、3gp、avi
      * @var string $video_file
      */
-    private $video_file;
+    protected $video_file;
 
     /**
      * @return string

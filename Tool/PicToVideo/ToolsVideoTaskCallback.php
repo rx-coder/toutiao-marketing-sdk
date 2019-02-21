@@ -22,32 +22,32 @@ class ToolsVideoTaskCallback extends RpcRequest
      * 模版类型
      * @var string $template_category
      */
-    private $template_category;
+    protected $template_category;
 
     /**
      * @var int $template_id
      */
-    private $template_id;
+    protected $template_id;
 
     /**
      * @var string $video_uri
      */
-    private $video_uri;
+    protected $video_uri;
 
     /**
      * @var int $errcode
      */
-    private $errcode;
+    protected $errcode;
 
     /**
      * @var string $errmsg
      */
-    private $errmsg;
+    protected $errmsg;
 
     /**
      * @var array $video_detail
      */
-    private $video_detail;
+    protected $video_detail;
 
     /**
      * @return string

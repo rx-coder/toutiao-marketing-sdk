@@ -26,18 +26,18 @@ class CampaignUpdateStatus extends RpcRequest
     /**
      * 广告主ID
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 广告组ID集合
      */
-    private $campaign_ids;
+    protected $campaign_ids;
 
     /**
      * 操作, "enable"表示启用, "delete"表示删除, "disable"表示暂停
      * 允许值: "enable", "delete", "disable"
      */
-    private $opt_status;
+    protected $opt_status;
 
     /**
      * @param mixed $advertiser_id

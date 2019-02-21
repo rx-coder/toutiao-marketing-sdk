@@ -22,7 +22,7 @@ class ToolsInterestTagsSelect extends RpcRequest
      * 广告主ID
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * @return int

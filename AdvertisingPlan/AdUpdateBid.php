@@ -26,22 +26,22 @@ class AdUpdateBid extends RpcRequest
     /**
      * 广告主ID
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 计划ID集合
      */
-    private $ad_ids;
+    protected $ad_ids;
 
     /**
      * 出价
      */
-    private $bid;
+    protected $bid;
 
     /**
      * 批量修改，包含计划id和出价
      */
-    private $data;
+    protected $data;
 
     /**
      * @param mixed $advertiser_id

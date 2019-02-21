@@ -22,144 +22,144 @@ class CreativeUpdate extends RpcRequest
     /**
      * 广告主ID
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 计划ID
      */
-    private $ad_id;
+    protected $ad_id;
 
     /**
      * 时间戳,从read接口得到,用于判断是否基于最新信息修改
      */
-    private $modify_time;
+    protected $modify_time;
 
     /**
      * 展示监测链接
      */
-    private $track_url;
+    protected $track_url;
 
     /**
      * 点击监测链接
      */
-    private $action_track_url;
+    protected $action_track_url;
 
     /**
      * 视频有效播放监测链接
      */
-    private $video_play_effective_track_url;
+    protected $video_play_effective_track_url;
 
     /**
      * 视频播放完毕监测链接
      */
-    private $video_play_done_track_url;
+    protected $video_play_done_track_url;
 
     /**
      * 视频播放监测链接
      */
-    private $video_play_track_url;
+    protected $video_play_track_url;
 
     /**
      * 是否关闭评论
      * 允许值: 0, 1
      */
-    private $is_comment_disable;
+    protected $is_comment_disable;
 
     /**
      * 是否关闭视频详情页落地页(勾选该选项后,视频详情页中不默认弹出落地页,仅对视频广告生效)
      * 允许值: 0, 1
      */
-    private $close_video_detail;
+    protected $close_video_detail;
 
     /**
      * 创意展现方式
      * 允许值: "CREATIVE_DISPLAY_MODE_CTR", "CREATIVE_DISPLAY_MODE_RANDOM"
      */
-    private $creative_display_mode;
+    protected $creative_display_mode;
 
     /**
      * 是否使用优选广告位，0表示不使用优选，1表示使用，使用优选广告位的时候默认忽略inventory_type字段。
      * 默认值: 0
      * 允许值: 0, 1
      */
-    private $smart_inventory;
+    protected $smart_inventory;
 
     /**
      * 创意投放位置
      */
-    private $inventory_type;
+    protected $inventory_type;
 
     /**
      * 文章来源
      * 当推广目的为非应用下载或推广目的为应用下载&download_type=EXTERNAL_URL时必填
      */
-    private $source;
+    protected $source;
 
     /**
      * 应用名(当推广应用下载[包含Android、iOS]时, 必填)
      */
-    private $app_name;
+    protected $app_name;
 
     /**
      * Android应用下载详情页(当推广应用下载Android时, 必填)
      */
-    private $web_url;
+    protected $web_url;
 
     /**
      * 创意标签
      */
-    private $ad_keywords;
+    protected $ad_keywords;
 
     /**
      * 创意分类
      */
-    private $third_industry_id;
+    protected $third_industry_id;
 
     /**
      * 附加创意类型
      * 允许值: "ATTACHED_CREATIVE_NONE", "ATTACHED_CREATIVE_PHONE","ATTACHED_CREATIVE_FORM"
      */
-    private $advanced_creative_type;
+    protected $advanced_creative_type;
 
     /**
      * 副标题
      */
-    private $advanced_creative_title;
+    protected $advanced_creative_title;
 
     /**
      * 电话号码
      */
-    private $phone_number;
+    protected $phone_number;
 
     /**
      * 按钮文本
      */
-    private $button_text;
+    protected $button_text;
 
     /**
      * 表单提交链接
      */
-    private $form_url;
+    protected $form_url;
 
     /**
      * 创意类型
      */
-    private $creative_material_mode;
+    protected $creative_material_mode;
 
     /**
      * 标题信息
      */
-    private $title_list;
+    protected $title_list;
 
     /**
      * 素材信息
      */
-    private $image_list;
+    protected $image_list;
 
     /**
      * 素材信息, 投放位置和创意类型决定素材规格
      */
-    private $creatives;
+    protected $creatives;
 
     /**
      * @param mixed $advertiser_id

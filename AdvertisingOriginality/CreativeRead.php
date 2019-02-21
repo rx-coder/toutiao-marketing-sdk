@@ -22,12 +22,12 @@ class CreativeRead extends RpcRequest
     /**
      * 广告主ID
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 计划ID
      */
-    private $ad_id;
+    protected $ad_id;
 
     /**
      * @param mixed $advertiser_id

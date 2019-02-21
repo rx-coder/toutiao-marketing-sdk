@@ -22,13 +22,13 @@ class ToolsInterestTagsDelete extends RpcRequest
      * 广告主ID
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 兴趣关键词词包id
      * @var int $id
      */
-    private $id;
+    protected $id;
 
     /**
      * @return int

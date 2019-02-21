@@ -22,37 +22,37 @@ class DmpDataSourceCreate extends RpcRequest
      * 广告主ID
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 数据源名称, 限30个字符内（使用API通过上传数据源方式创建的人群包生成后人群包名称会与数据源名称一致，人群包标签会默认为“API文件数据源”）
      * @var string $data_source_name
      */
-    private $data_source_name;
+    protected $data_source_name;
 
     /**
      * 数据源描述, 限256字符内
      * @var string $description
      */
-    private $description;
+    protected $description;
 
     /**
      * 数据格式, 0: ProtocolBuffer
      * @var int $data_format
      */
-    private $data_format;
+    protected $data_format;
 
     /**
      * 数据存储类型, 0: API
      * @var int $file_storage_type
      */
-    private $file_storage_type;
+    protected $file_storage_type;
 
     /**
      * 通过上传接口得到的文件路径
      * @var array $file_paths
      */
-    private $file_paths;
+    protected $file_paths;
 
     /**
      * @return int

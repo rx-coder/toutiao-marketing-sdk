@@ -26,19 +26,19 @@ class AdUpdateStatus extends RpcRequest
     /**
      * 广告主ID
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 计划ID集合
      */
-    private $ad_ids;
+    protected $ad_ids;
 
     /**
      * 操作
      *  "enable"表示启用, "delete"表示删除, "disable"表示暂停
      * 允许值: "enable", "delete", "disable"
      */
-    private $opt_status;
+    protected $opt_status;
 
     /**
      * @param mixed $advertiser_id

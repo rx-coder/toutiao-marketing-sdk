@@ -22,37 +22,37 @@ class DmpDataSourceUpdate extends RpcRequest
      * 广告主ID
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 数据源ID
      * @var string $data_source_id
      */
-    private $data_source_id;
+    protected $data_source_id;
 
     /**
      * 更新操作类型, 1: 添加append, 2: 删除delete, 3:重置 reset
      * @var int $operation_type
      */
-    private $operation_type;
+    protected $operation_type;
 
     /**
      * 数据格式, 0: ProtocolBuffer
      * @var int $data_format
      */
-    private $data_format;
+    protected $data_format;
 
     /**
      * 数据存储类型, 0: API
      * @var int $file_storage_type
      */
-    private $file_storage_type;
+    protected $file_storage_type;
 
     /**
      * 通过上传接口得到的文件路径
      * @var array $file_paths
      */
-    private $file_paths;
+    protected $file_paths;
 
     /**
      * @return int

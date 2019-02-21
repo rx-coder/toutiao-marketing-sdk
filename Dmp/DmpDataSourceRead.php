@@ -22,13 +22,13 @@ class DmpDataSourceRead extends RpcRequest
      * 广告主ID
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 数据源ID列表
      * @var array $data_source_id_list
      */
-    private $data_source_id_list;
+    protected $data_source_id_list;
 
     /**
      * @return int

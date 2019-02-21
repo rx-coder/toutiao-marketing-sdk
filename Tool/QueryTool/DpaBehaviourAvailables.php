@@ -22,13 +22,13 @@ class DpaBehaviourAvailables extends RpcRequest
      * 广告主ID
      * @var string $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 平台id
      * @var string $platform_id
      */
-    private $platform_id;
+    protected $platform_id;
 
     /**
      * @return string

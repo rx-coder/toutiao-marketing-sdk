@@ -26,22 +26,22 @@ class AdUpdateBudget extends RpcRequest
     /**
      * 广告主ID
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 计划ID
      */
-    private $ad_id;
+    protected $ad_id;
 
     /**
      * 预算
      */
-    private $budget;
+    protected $budget;
 
     /**
      * 批量修改预算，包含计划ID和预算
      */
-    private $data;
+    protected $data;
 
     /**
      * @param mixed $advertiser_id

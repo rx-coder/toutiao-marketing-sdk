@@ -22,13 +22,13 @@ class ToolsAdConvertUpdateStatus extends RpcRequest
      * 操作的广告主id
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 转化ID
      * @var int $convert_id
      */
-    private $convert_id;
+    protected $convert_id;
 
     /**
      * 操作状态，详见【附录-操作状态】, 允许值：
@@ -38,7 +38,7 @@ class ToolsAdConvertUpdateStatus extends RpcRequest
      *
      * @var string $opt_status
      */
-    private $opt_status;
+    protected $opt_status;
 
     /**
      * @return int

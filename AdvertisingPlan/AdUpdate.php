@@ -26,100 +26,100 @@ class AdUpdate extends RpcRequest
     /**
      * 广告主ID
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 计划ID
      */
-    private $ad_id;
+    protected $ad_id;
 
     /**
      * 时间戳
      */
-    private $modify_time;
+    protected $modify_time;
 
     /**
      * （不可修改）投放范围
      * 默认值: DEFAULT
      * 允许值: "DEFAULT", "UNION"
      */
-    private $delivery_range;
+    protected $delivery_range;
 
     /**
      * （不可修改）广告预算类型
      * 允许值: "BUDGET_MODE_DAY", "BUDGET_MODE_TOTAL"
      */
-    private $budget_mode;
+    protected $budget_mode;
 
     /**
      * 广告预算
      */
-    private $budget;
+    protected $budget;
 
     /**
      * 广告投放起始时间，形式如：2017-01-01 00:00
      */
-    private $start_time;
+    protected $start_time;
 
     /**
      * 广告投放结束时间，形式如：2017-01-01 00:00
      */
-    private $end_time;
+    protected $end_time;
 
     /**
      * 广告出价
      */
-    private $bid;
+    protected $bid;
 
     /**
      * （不可修改）广告出价类型
      */
-    private $pricing;
+    protected $pricing;
 
     /**
      * 广告投放时间类型
      * 允许值: "SCHEDULE_FROM_NOW", "SCHEDULE_START_END"
      */
-    private $schedule_type;
+    protected $schedule_type;
 
     /**
      * 广告投放时段
      */
-    private $schedule_time;
+    protected $schedule_time;
 
     /**
      * 广告投放速度类型
      */
-    private $flow_control_mode;
+    protected $flow_control_mode;
 
     /**
      * 应用直达链接
      */
-    private $open_url;
+    protected $open_url;
 
     /**
      * （创建后不可修改）应用下载方式
      */
-    private $download_type;
+    protected $download_type;
 
     /**
      * 对于转化为目标的计划如OCPM、CPA计划进入审核后将不允许更改，
      * 即计划下创建创意后不可更改，非转化为目标的计划如CPC、CPM计划可用更改无此限制）
      * 广告落地页链接（当推广目的landing_type=LINK 或者landing_type=APP&download_type=EXTERNAL_URL 时必填）
      */
-    private $external_url;
+    protected $external_url;
 
     /**
      * （对于转化为目标的计划如OCPM、CPA计划进入审核后将不允许更改，即计划下创建创意后不可更改，
      * 非转化为目标的计划如CPC、CPM计划可用更改无此限制）广告应用下载链接
      * （当推广目的landing_type=APP&download_type=DOWNLOAD_URL时必填，landing_type=LINK时不填）
      */
-    private $download_url;
+    protected $download_url;
 
     /**
      * 广告名称
      */
-    private $name;
+    protected $name;
 
     /**
      * （计划进入审核后不允许再更改，即计划下创建创意后不可更改）
@@ -127,71 +127,71 @@ class AdUpdate extends RpcRequest
      * (当campaign的landing_type=APP&download_type=DOWNLOAD_URL时必填，landing_type=LINK或者download_type=EXTERNAL_URL时不填)
      * 允许值: "APP_ANDROID", "APP_IOS"
      */
-    private $app_type;
+    protected $app_type;
 
     /**
      * （计划进入审核后不允许再更改，即计划下创建创意后不可更改）
      * 广告应用下载包名(应用下载类型时,必填)
      */
-    private $package;
+    protected $package;
 
     /**
      * ocpm广告转化出价
      * （如果是CPC、CPM出价方式的计划请填写bid字段，如果是OCPM出价方式的计划请填写cpq_bid字段）
      */
-    private $cpa_bid;
+    protected $cpa_bid;
 
     /**
      * 过滤已转化用户类型字段
      */
-    private $hide_if_converted;
+    protected $hide_if_converted;
 
     /**
      * 过滤已安装，当推广目标为安卓应用下载时可填，0表示不过滤，1表示过滤，默认为不过滤
      * 默认值: 0
      * 允许值: 0, 1
      */
-    private $hide_if_exists;
+    protected $hide_if_exists;
 
     /**
      * 定向人群包列表，内容为人群包id
      */
-    private $retargeting_tags_include;
+    protected $retargeting_tags_include;
 
     /**
      * 排除人群包列表，内容为人群包id
      */
-    private $retargeting_tags_exclude;
+    protected $retargeting_tags_exclude;
 
     /**
      * 受众性别
      * 允许值: "GENDER_FEMALE", "GENDER_MALE", "NONE"
      */
-    private $gender;
+    protected $gender;
 
     /**
      * 受众年龄区间
      * 允许值: "AGE_BELOW_18", "AGE_BETWEEN_18_23", "AGE_BETWEEN_24_30","AGE_BETWEEN_31_40", "AGE_BETWEEN_41_49", "AGE_ABOVE_50"
      */
-    private $age;
+    protected $age;
 
     /**
      * 受众最低android版本
      * 允许值: "0.0", "2.0", "2.1", "2.2", "2.3", "3.0", "3.1", "3.2", "4.0","4.1", "4.2", "4.3", "4.4", "4.5", "5.0", "NONE"
      */
-    private $android_osv;
+    protected $android_osv;
 
     /**
      * 受众最低ios版本
      * 允许值: "0.0", "4.0", "4.1", "4.2", "4.3", "5.0", "5.1", "6.0", "7.0","7.1", "8.0", "8.1", "8.2", "9.0", "NONE"
      */
-    private $ios_osv;
+    protected $ios_osv;
 
     /**
      * 受众网络类型
      * 允许值: "WIFI", "2G", "3G", "4G"
      */
-    private $ac;
+    protected $ac;
 
     /**
      * 受众手机品牌
@@ -199,13 +199,13 @@ class AdUpdate extends RpcRequest
      * "COOLPAD", "LENOVO", "LETV", "ZTE","CHINAMOBILE", "HTC", "PEPPER", "NUBIA", "HISENSE",
      * "QIKU", "TCL","SONY", "SMARTISAN", "360", "ONEPLUS", "LG", "MOTO", "NOKIA","GOOGLE"
      */
-    private $device_brand;
+    protected $device_brand;
 
     /**
      * 用户首次激活时间
      * 允许值: "WITH_IN_A_MONTH", "ONE_MONTH_2_THREE_MONTH","THREE_MONTH_EAILIER"
      */
-    private $activate_type;
+    protected $activate_type;
 
     /**
      * 受众文章分类
@@ -217,92 +217,92 @@ class AdUpdate extends RpcRequest
      * "COMICS", "TIPS", "DESIGN", "LOCAL","LAWS", "GOVERNMENT", "BUSINESS", "WORKPLACE",
      * "RUMOR_CRACKER","GRADUATES"
      */
-    private $article_category;
+    protected $article_category;
 
     /**
      * 受众平台
      * 允许值: "ANDROID", "IOS", "PC"
      */
-    private $platform;
+    protected $platform;
 
     /**
      * 受众运营商
      * 允许值: "MOBILE", "UNICOM", "TELCOM"
      */
-    private $carrier;
+    protected $carrier;
 
     /**
      * 地域定向城市或者区县列表
      */
-    private $city;
+    protected $city;
 
     /**
      * 地域类型，前者为省市，后者为区县。当city有数据时，必填。
      * 允许值: "CITY", "COUNTY", "NONE"
      */
-    private $district;
+    protected $district;
 
     /**
      * 受众位置类型
      */
-    private $location_type;
+    protected $location_type;
 
     /**
      * 兴趣分类
      * 如果传空数组 [] 表示不限，如果只传[0]表示系统推荐,如果按兴趣类型传表示自定义
      */
-    private $ad_tag;
+    protected $ad_tag;
 
     /**
      * 广告名称
      */
-    private $interest_tags;
+    protected $interest_tags;
 
     /**
      * APP行为定向
      * 允许值: "CATEGORY", "APP", "NONE"
      */
-    private $app_behavior_target;
+    protected $app_behavior_target;
 
     /**
      * APP行为定向
      */
-    private $app_category;
+    protected $app_category;
 
     /**
      * APP行为定向
      */
-    private $app_ids;
+    protected $app_ids;
 
     /**
      * 产品目录ID
      */
-    private $product_platform_id;
+    protected $product_platform_id;
 
     /**
      * H5地址参数
      */
-    private $external_url_params;
+    protected $external_url_params;
 
     /**
      * 直达链接参数
      */
-    private $open_url_params;
+    protected $open_url_params;
 
     /**
      * 是否自定义商品定向
      */
-    private $dpa_local_audience;
+    protected $dpa_local_audience;
 
     /**
      * 包含人群包
      */
-    private $include_custom_actions;
+    protected $include_custom_actions;
 
     /**
      * 排除人群包
      */
-    private $exclude_custom_actions;
+    protected $exclude_custom_actions;
 
     /**
      * @param mixed $advertiser_id

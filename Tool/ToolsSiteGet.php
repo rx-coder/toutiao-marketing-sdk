@@ -22,19 +22,19 @@ class ToolsSiteGet extends RpcRequest
      * 广告主id
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 页码 默认值: 1
      * @var int $page
      */
-    private $page;
+    protected $page;
 
     /**
      * 页面数据量 默认值: 20
      * @var int $page_size
      */
-    private $page_size;
+    protected $page_size;
 
     /**
      * @return int

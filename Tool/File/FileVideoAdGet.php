@@ -22,13 +22,13 @@ class FileVideoAdGet extends RpcRequest
      * 广告主ID
      * @var string $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 视频ids
      * @var array $video_ids
      */
-    private $video_ids;
+    protected $video_ids;
 
     /**
      * @return string

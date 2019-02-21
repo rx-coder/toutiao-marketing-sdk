@@ -22,13 +22,13 @@ class ToolsInterestTagsWord2id extends RpcRequest
      * 广告主id
      * @var int $advertiser_id
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 兴趣关键词
      * @var array $words
      */
-    private $words;
+    protected $words;
 
     /**
      * @return int

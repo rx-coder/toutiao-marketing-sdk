@@ -25,24 +25,24 @@ class AdCreate extends RpcRequest
     /**
      * 广告主ID
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * 广告组ID
      */
-    private $campaign_id;
+    protected $campaign_id;
 
     /**
      * 投放范围
      * 默认值: DEFAULT  允许值: "DEFAULT", "UNION"
      */
-    private $delivery_range;
+    protected $delivery_range;
 
     /**
      * 广告预算类型
      * 允许值: "BUDGET_MODE_DAY", "BUDGET_MODE_TOTAL"
      */
-    private $budget_mode;
+    protected $budget_mode;
 
     /**
      * 广告预算
@@ -50,59 +50,59 @@ class AdCreate extends RpcRequest
      * 如果是总预算广告，且设了起始日期，将要求您预算设置需要大于或等于[投放天数 * 100]，即满足每日最低预算100的要求。
      * 取值范围: ≥ 0
      */
-    private $budget;
+    protected $budget;
 
     /**
      * 广告投放起始时间，形式如：2017-01-01 00:00
      */
-    private $start_time;
+    protected $start_time;
 
     /**
      * 广告投放结束时间，形式如：2017-01-01 00:00
      */
-    private $end_time;
+    protected $end_time;
 
     /**
      * 广告出价（如果是CPC、CPM出价方式的计划请填写bid字段，如果是OCPM出价方式的计划请填写cpq_bid字段）
      * 取值范围: ≥ 0
      */
-    private $bid;
+    protected $bid;
 
     /**
      * 广告出价类型
      */
-    private $pricing;
+    protected $pricing;
 
     /**
      * 广告投放时间类型
      * 允许值: "SCHEDULE_FROM_NOW", "SCHEDULE_START_END"
      */
-    private $schedule_type;
+    protected $schedule_type;
 
     /**
      * 广告投放时段，默认全时段投放
      * 格式是48*7位字符串，且都是0或1。
      * 也就是以半个小时为最小粒度，周一至周日每天分为48个区段，0为不投放，1为投放，不传、全传0、全传1均代表全时段投放
      */
-    private $schedule_time;
+    protected $schedule_time;
 
     /**
      * 广告投放速度类型
      * 允许值: "FLOW_CONTROL_MODE_FAST", "FLOW_CONTROL_MODE_SMOOTH", "FLOW_CONTROL_MODE_BALANCE"
      */
-    private $flow_control_mode;
+    protected $flow_control_mode;
 
     /**
      * (可选)
      * 应用直达链接
      */
-    private $open_url;
+    protected $open_url;
 
     /**
      * 应用下载方式，当推广目的是应用下载即landing_type=APP时要求传此字段，默认为按下载链接方式。
      * 可选值：DOWNLOAD_URL（下载链接，默认），EXTERNAL_URL（落地页链接）
      */
-    private $download_type;
+    protected $download_type;
 
     /**
      * 广告落地页链接
@@ -113,20 +113,20 @@ class AdCreate extends RpcRequest
      * 2 推广目的为“应用推广”，下载方式为“下载链接”时，应用详情页必须使用橙子建站；
      * 3 推广目的为“应用推广”，下载方式为“落地页”时，落地页链接地址必须使用橙子建站。
      */
-    private $external_url;
+    protected $external_url;
 
     /**
      * 广告应用下载链接
      * 当推广目的landing_type=APP&download_type=DOWNLOAD_URL时必填，landing_type=LINK时不填）
      * ——对于转化为目标的计划如OCPM、CPA计划进入审核后将不允许更改，即计划下创建创意后不可更改，非转化为目标的计划如CPC、CPM计划可用更改无此限制
      */
-    private $download_url;
+    protected $download_url;
 
     /**
      * 广告名称
      * 长度为1-100个字符，其中1个中文字符算2位
      */
-    private $name;
+    protected $name;
 
     /**
      * (可选)
@@ -134,91 +134,91 @@ class AdCreate extends RpcRequest
      * (当campaign的landing_type=APP&download_type=DOWNLOAD_URL时必填，landing_type=LINK或者download_type=EXTERNAL_URL时不填)
      * 允许值: "APP_ANDROID", "APP_IOS"
      */
-    private $app_type;
+    protected $app_type;
 
     /**
      * 广告应用下载包名(应用下载类型，必填)
      */
-    private $package;
+    protected $package;
 
     /**
      * 过滤已转化用户类型字段，只有转化为目标时可填
      */
-    private $hide_if_converted;
+    protected $hide_if_converted;
 
     /**
      * 过滤已安装，当推广目标为安卓应用下载时可填
      * 0表示不过滤，1表示过滤，默认为不过滤
      * 默认值: 0 允许值: 0, 1
      */
-    private $hide_if_exists;
+    protected $hide_if_exists;
 
     /**
      * ocpm广告转化出价
      * （如果是CPC、CPM出价方式的计划请填写bid字段，如果是OCPM出价方式的计划请填写cpq_bid字段）
      * 取值范围: 0-1000
      */
-    private $cpa_bid;
+    protected $cpa_bid;
 
     /**
      * 转化id
      * 对于OCPM出价是必填项，CPC和CPM不是必填项。
      */
-    private $convert_id;
+    protected $convert_id;
 
     /**
      * （可选） 受众相关参数
      * 定向人群包列表，内容为人群包id。（新增字段，使用新增字段支持同时选择定向和排除）
      */
-    private $retargeting_tags_include;
+    protected $retargeting_tags_include;
 
     /**
      * （可选） 受众相关参数
      * 排除人群包列表，内容为人群包id。（新增字段，使用新增字段支持同时选择定向和排除）
      */
-    private $retargeting_tags_exclude;
+    protected $retargeting_tags_exclude;
 
     /**
      * （可选） 受众相关参数
      * 受众性别
      * 允许值: "GENDER_FEMALE", "GENDER_MALE", "NONE"
      */
-    private $gender;
+    protected $gender;
 
     /**
      * （可选） 受众相关参数
      * 受众年龄区间
      * 允许值: "AGE_BELOW_18", "AGE_BETWEEN_18_23", "AGE_BETWEEN_24_30","AGE_BETWEEN_31_40", "AGE_BETWEEN_41_49", "AGE_ABOVE_50"
      */
-    private $age;
+    protected $age;
 
     /**
      * （可选） 受众相关参数
      * 受众最低android版本(当推广应用下载Android时选填,其余情况不填)
      * 允许值: "0.0", "2.0", "2.1", "2.2", "2.3", "3.0", "3.1", "3.2", "4.0","4.1", "4.2", "4.3", "4.4", "4.5", "5.0", "NONE"
      */
-    private $android_osv;
+    protected $android_osv;
 
     /**
      * （可选） 受众相关参数
      * 受众最低ios版本(当推广应用下载iOS时选填,其余情况不填)
      * 允许值: "0.0", "4.0", "4.1", "4.2", "4.3", "5.0", "5.1", "6.0", "7.0","7.1", "8.0", "8.1", "8.2", "9.0", "NONE"
      */
-    private $ios_osv;
+    protected $ios_osv;
 
     /**
      * （可选） 受众相关参数
      * 受众运营商
      * 允许值: "MOBILE", "UNICOM", "TELCOM"
      */
-    private $carrier;
+    protected $carrier;
 
     /**
      * （可选） 受众相关参数
      * 受众网络类型
      * 允许值: "WIFI", "2G", "3G", "4G"
      */
-    private $ac;
+    protected $ac;
 
     /**
      * （可选） 受众相关参数
@@ -229,7 +229,7 @@ class AdCreate extends RpcRequest
      * "QIKU", "TCL","SONY", "SMARTISAN", "360", "ONEPLUS", "LG",
      * "MOTO", "NOKIA","GOOGLE"
      */
-    private $device_brand;
+    protected $device_brand;
 
     /**
      * （可选） 受众相关参数
@@ -243,14 +243,14 @@ class AdCreate extends RpcRequest
      * "COMICS", "TIPS", "DESIGN", "LOCAL","LAWS", "GOVERNMENT", "BUSINESS",
      * "WORKPLACE", "RUMOR_CRACKER","GRADUATES"
      */
-    private $article_category;
+    protected $article_category;
 
     /**
      * （可选） 受众相关参数
      * 用户首次激活时间
      * 允许值: "WITH_IN_A_MONTH", "ONE_MONTH_2_THREE_MONTH","THREE_MONTH_EAILIER"
      */
-    private $activate_type;
+    protected $activate_type;
 
     /**
      * （可选） 受众相关参数
@@ -258,14 +258,14 @@ class AdCreate extends RpcRequest
      * (当推广目的landing_type=APP时,不填,且为保证投放效果,平台类型定向PC与移动端互斥)
      * 允许值: "ANDROID", "IOS", "PC"
      */
-    private $platform;
+    protected $platform;
 
     /**
      * （可选） 受众相关参数
      * 地域定向城市或者区县列表
      * (当传递省份ID时,旗下市县ID可省略不传)
      */
-    private $city;
+    protected $city;
 
     /**
      * （可选） 受众相关参数
@@ -273,54 +273,54 @@ class AdCreate extends RpcRequest
      * 前者为省市，后者为区县。当city有数据时，必填。
      * 允许值: "CITY", "COUNTY", "NONE"
      */
-    private $district;
+    protected $district;
 
     /**
      * （可选） 受众相关参数
      * 受众位置类型
      * 当city和district有值时，该字段必填
      */
-    private $location_type;
+    protected $location_type;
 
     /**
      * （可选） 受众相关参数
      * 兴趣分类
      * 如果传空数组 [] 表示不限，如果只传[0]表示系统推荐,如果按兴趣类型传表示自定义
      */
-    private $ad_tag;
+    protected $ad_tag;
 
     /**
      * （可选） 受众相关参数
      * 兴趣关键词
      * 传入具体的词id，非兴趣词包id，可以通过词包相关接口或者兴趣关键词word2id接口获取词id，一个计划下最多创建1000个关键词。
      */
-    private $interest_tags;
+    protected $interest_tags;
 
     /**
      * （可选） 受众相关参数
      * APP行为定向
      * 允许值: "CATEGORY", "APP", "NONE"
      */
-    private $app_behavior_target;
+    protected $app_behavior_target;
 
     /**
      * （可选） 受众相关参数
      * APP行为定向,分类集合
      */
-    private $app_category;
+    protected $app_category;
 
     /**
      * （可选） 受众相关参数
      * APP行为定向,APP集合
      */
-    private $app_ids;
+    protected $app_ids;
 
     /**
      * （可选） 受众相关参数
      * 产品目录ID
      * (ID由查询产品目录接口得到), 当推广目的landing_type=DPA时必填
      */
-    private $product_platform_id;
+    protected $product_platform_id;
 
     /**
      * （可选） 受众相关参数
@@ -328,20 +328,20 @@ class AdCreate extends RpcRequest
      * (DPA推广目的特有,在填写的参数后面添加"=urlencode(开放平台提供的h5链接地址）"
      * 其中urlencode(开放平台提供的h5链接地址）替换为商品库中的h5地址encode的结果)
      */
-    private $external_url_params;
+    protected $external_url_params;
 
     /**
      * （可选） 受众相关参数
      * 直达链接参数
      * ((DPA推广目的特有,在“产品库中提取的scheme地址"后面追加填写的参数)
      */
-    private $open_url_params;
+    protected $open_url_params;
 
     /**
      * （可选） 受众相关参数
      * 是否自定义商品定向((DPA推广目的特有,1表示自定义)
      */
-    private $dpa_local_audience;
+    protected $dpa_local_audience;
 
     /**
      * （可选） 受众相关参数
@@ -349,7 +349,7 @@ class AdCreate extends RpcRequest
      * ((DPA推广目的特有,格式举例[{"days": 7, "code": 1001},]
      * day可选范围:1, 7, 14, 28, code候选范围由查询行为人群库接口得到)
      */
-    private $include_custom_actions;
+    protected $include_custom_actions;
 
     /**
      * （可选） 受众相关参数
@@ -357,7 +357,7 @@ class AdCreate extends RpcRequest
      * ((DPA推广目的特有,格式举例[{"days": 7, "code": 1002},]
      * day可选范围:1, 7, 14, 28, code候选范围由查询行为人群库接口得到)
      */
-    private $exclude_custom_actions;
+    protected $exclude_custom_actions;
 
     /**
      * @param mixed $advertiser_id
