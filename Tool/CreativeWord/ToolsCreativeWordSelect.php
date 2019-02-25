@@ -74,6 +74,5 @@ class ToolsCreativeWordSelect extends RpcRequest
     public function check()
     {
         RequestCheckUtil::checkNotNull($this->advertiser_id, 'advertiser_id');
-        RequestCheckUtil::checkNotNull($this->creative_word_ids, 'creative_word_ids');
     }
 }
