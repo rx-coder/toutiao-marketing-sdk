@@ -152,6 +152,7 @@ class FileImageAdvertiser extends RpcRequest
     {
         RequestCheckUtil::checkNotNull($this->advertiser_id, 'advertiser_id');
         if ($this->upload_type == 'UPLOAD_BY_URL') {
+            $this->content_type = 'application/json';
             RequestCheckUtil::checkNotNull($this->image_url, 'image_url');
         } else {
             RequestCheckUtil::checkNotNull($this->image_signature, 'image_signature');
