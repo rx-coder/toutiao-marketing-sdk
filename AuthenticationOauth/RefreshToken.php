@@ -17,4 +17,9 @@ class RefreshToken extends RpcRequest
      */
     protected $method = 'POST';
     protected $url = '/oauth2/refresh_token/';
+
+    protected $app_id;
+    protected $secret;
+    protected $grant_type;
+    protected $auth_code;
 }
