@@ -24,5 +24,5 @@ class GetAccessToken extends RpcRequest
     protected $app_id;
     protected $secret;
     protected $grant_type;
-    protected $refresh_token;
+    protected $auth_code;
 }

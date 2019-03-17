@@ -21,5 +21,5 @@ class RefreshToken extends RpcRequest
     protected $app_id;
     protected $secret;
     protected $grant_type;
-    protected $auth_code;
+    protected $refresh_token;
 }
