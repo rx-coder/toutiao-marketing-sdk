@@ -228,14 +228,14 @@ class AdGet extends RpcRequest
      */
     public function check()
     {
-        RequestCheckUtil::checkAllowField($this->fields, [
+      /*  RequestCheckUtil::checkAllowField($this->fields, [
             "id", "name", "budget", "budget_mode", "status", "opt_status", "open_url",
             "modify_time", "start_time", "end_time", "bid", "advertiser_id", "pricing",
             "flow_control_mode", "download_url", "inventory_type", "schedule_type",
             "app_type", "cpa_bid", "cpa_skip_first_phrase", "audience", "external_url",
             "package", "campaign_id", "ad_modify_time", "ad_create_time", "audit_reject_reason",
             "retargeting_type", "retargeting_tags", "convert_id", "interest_tags", "hide_if_converted"
-        ], 'fields');
+        ], 'fields');*/
     }
 
 
