@@ -79,6 +79,6 @@ class AdUpdateStatus extends RpcRequest
      */
     public function check()
     {
-        RequestCheckUtil::checkAllowField($this->opt_status, ["enable", "delete", "disable"], 'opt_status');
+       /* RequestCheckUtil::checkAllowField($this->opt_status, ["enable", "delete", "disable"], 'opt_status');*/
     }
 }
