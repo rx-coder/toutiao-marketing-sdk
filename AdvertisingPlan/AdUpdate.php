@@ -849,7 +849,7 @@ class AdUpdate extends RpcRequest
      */
     public function check()
     {
-        RequestCheckUtil::checkAllowField($this->budget_mode, ["BUDGET_MODE_DAY", "BUDGET_MODE_TOTAL"], 'budget_mode');
+ /*       RequestCheckUtil::checkAllowField($this->budget_mode, ["BUDGET_MODE_DAY", "BUDGET_MODE_TOTAL"], 'budget_mode');
         RequestCheckUtil::checkAllowField($this->delivery_range, ["BUDGET_MODE_DAY", "BUDGET_MODE_TOTAL"], 'delivery_range');
         RequestCheckUtil::checkAllowField($this->schedule_type, ["SCHEDULE_FROM_NOW", "SCHEDULE_START_END"], 'schedule_type');
         RequestCheckUtil::checkAllowField($this->app_type, ["APP_ANDROID", "APP_IOS"], 'app_type');
@@ -890,6 +890,6 @@ class AdUpdate extends RpcRequest
         RequestCheckUtil::checkAllowField($this->platform, ["ANDROID", "IOS", "PC"], 'platform');
         RequestCheckUtil::checkAllowField($this->carrier, ["MOBILE", "UNICOM", "TELCOM"], 'carrier');
         RequestCheckUtil::checkAllowField($this->district, ["CITY", "COUNTY", "NONE"], 'district');
-        RequestCheckUtil::checkAllowField($this->app_behavior_target, ["CATEGORY", "APP", "NONE"], 'app_behavior_target');
+        RequestCheckUtil::checkAllowField($this->app_behavior_target, ["CATEGORY", "APP", "NONE"], 'app_behavior_target');*/
     }
 }

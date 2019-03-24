@@ -14,7 +14,7 @@ class Module extends BaseModule
 {
     public function AdCreate()
     {
-        return new adCreate($this->client);
+        return new AdCreate($this->client);
     }
 
     public function adGet()
