@@ -40,4 +40,9 @@ class Module extends BaseModule
     {
         return new ToolsIndustryGet($this->client);
     }
+
+    public function regionGet()
+    {
+        return new ToolsRegionGet($this->client);
+    }
 }
