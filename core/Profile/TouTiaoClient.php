@@ -57,6 +57,7 @@ class TouTiaoClient
         if (strpos($request->getContentType(), "json") > 0) {
             $params = json_encode($params);
         }
+        HttpRequest::$readTimeout = $request->getTimeout();
         return HttpRequest::curl($url, $request->getMethod(), $params, $headers);
     }
 

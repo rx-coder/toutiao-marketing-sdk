@@ -17,6 +17,7 @@ class FileVideoAd extends RpcRequest
     protected $url = '/2/file/video/ad/';
     protected $method = 'POST';
     protected $content_type = 'multipart/form-data';
+    protected $timeout = 600;
 
     /**
      * 广告主ID

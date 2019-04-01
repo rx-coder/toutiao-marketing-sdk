@@ -16,6 +16,8 @@ interface RequestInteface
 
     public function getMethod();
 
+    public function getTimeout();
+
     public function setParams($array);
 
     public function getParams();

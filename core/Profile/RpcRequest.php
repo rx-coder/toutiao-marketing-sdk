@@ -29,6 +29,11 @@ class RpcRequest implements RequestInteface
     protected $method = 'GET';
 
     /**
+     * request timeout
+     */
+    protected $timeout = 60;
+
+    /**
      * request query params or raw body
      */
     protected $params = [];
@@ -61,6 +66,11 @@ class RpcRequest implements RequestInteface
     public function getMethod()
     {
         return $this->method;
+    }
+
+    public function getTimeout()
+    {
+        return $this->timeout;
     }
 
     public function getParams()
