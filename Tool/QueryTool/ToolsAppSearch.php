@@ -126,6 +126,5 @@ class ToolsAppSearch extends RpcRequest
     public function check()
     {
         RequestCheckUtil::checkNotNull($this->advertiser_id, 'advertiser_id');
-        RequestCheckUtil::checkNotNull($this->app_name, 'app_name');
     }
 }
