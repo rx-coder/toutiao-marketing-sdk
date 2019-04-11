@@ -25,10 +25,24 @@ class ToolsAppSearch extends RpcRequest
     protected $advertiser_id;
 
     /**
-     * 搜索关键字
+     * @var string 查询条件
+     * APP_NAME:按名称搜索，APP_ID:按ID搜索
+        默认值: APP_NAME
+        允许值: "APP_NAME", "APP_ID"
+     */
+    protected $search_by;
+
+    /**
+     * 搜索关键字，search_by=APP_NAME时必填
      * @var string $app_name
      */
     protected $app_name;
+
+    /**
+     * 应用的ID，search_by=APP_ID时必填
+     * @var integer
+     */
+    protected $app_id;
 
     /**
      * @return string
@@ -65,6 +79,44 @@ class ToolsAppSearch extends RpcRequest
     {
         $this->params["app_name"] = $app_name;
         $this->app_name = $app_name;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSearchBy()
+    {
+        return $this->search_by;
+    }
+
+    /**
+     * @param string $search_by
+     * @return $this
+     */
+    public function setSearchBy($search_by)
+    {
+        $this->params["search_by"] = $search_by;
+        $this->search_by = $search_by;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAppId()
+    {
+        return $this->app_id;
+    }
+
+    /**
+     * @param int $app_id
+     * @return $this
+     */
+    public function setAppId($app_id)
+    {
+        $this->params["app_id"] = $app_id;
+        $this->app_id = $app_id;
         return $this;
     }
 
