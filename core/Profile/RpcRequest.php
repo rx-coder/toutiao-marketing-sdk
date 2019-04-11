@@ -90,8 +90,8 @@ class RpcRequest implements RequestInteface
         foreach ($array as $key => $value) {
             if (property_exists($this, $key)) {
                 $this->$key = $value;
-                $this->params[$key] = $value;
             }
+            $this->params[$key] = $value;
         }
         return $this;
     }
