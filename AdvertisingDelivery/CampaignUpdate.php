@@ -124,16 +124,5 @@ class CampaignUpdate extends RpcRequest
         return $this;
     }
 
-
-    /**
-     *
-     * @throws InvalidParamException
-     */
-    public function check()
-    {
-        RequestCheckUtil::checkAllowField($this->budget_mode, ['BUDGET_MODE_INFINITE', 'BUDGET_MODE_DAY'], 'budget_mode');
-    }
-
-
 }
 
